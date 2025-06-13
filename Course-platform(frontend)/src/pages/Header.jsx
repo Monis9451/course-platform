@@ -10,7 +10,7 @@ const Header = () => {
       courses: [
         { name: 'Unburdening Trauma', path: '/courses/trauma' },
         { name: 'Unburdening Love', path: '/courses/love' },
-        { name: 'All Courses', path: '/courses/all' }
+        { name: 'All Courses', path: '/courses' }
       ],
       resources: [
         { name: 'Mindfulness', path: '/resources/articles' },
@@ -193,9 +193,10 @@ const Header = () => {
                 )}
               </div>
             </div>
-          </div>
-          <div className="flex-1 flex justify-end">
-            <button className="text-white hover:text-orange-200 text-2xl mr-1">Log In</button>
+          </div>          <div className="flex-1 flex justify-end">
+            <Link to="/login" className="text-white hover:text-orange-200 text-2xl mr-1 transition-colors duration-200">
+              Log In
+            </Link>
           </div>
         </div>        <div
           className={`fixed inset-y-0 left-0 z-40 w-64 transition-transform duration-500 ${

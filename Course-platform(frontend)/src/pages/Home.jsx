@@ -119,10 +119,8 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
-
-        {/* You Will Overcome Section */}
-      <section className="w-full py-16 bg-primay">
+      </section>        {/* You Will Overcome Section */}
+      <section className="w-full py-16 bg-primary">
         <div className="container px-4 md:px-6 max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {/* Video */}
