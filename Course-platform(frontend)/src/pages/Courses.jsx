@@ -5,12 +5,11 @@ import Header from '../pages/Header'
 const Courses = () => {
   const [isLoading, setIsLoading] = useState(true)
   
-  const courses = [
-    {
+  const courses = [    {
       id: 1,
       title: "Understanding Trauma",
       description: "A 6-Week Self-Paced Programme designed to help you identify and heal trauma patterns, develop emotional regulation skills, and break free from limiting beliefs that hold you back.",
-      img_src: "1.png",
+      img_src: "/1.png",
       img_alt: "Understanding Trauma Course",
       category: "BUNDLE"
     },
@@ -18,7 +17,7 @@ const Courses = () => {
       id: 2,
       title: "Understanding Love",
       description: "A 6-Week Self-Paced Programme focused on building authentic relationships, understanding attachment styles, and creating healthy relationship patterns.",
-      img_src: "love_course.png",
+      img_src: "/love_course.png",
       img_alt: "Understanding Love Course",
       category: "BUNDLE"
     },

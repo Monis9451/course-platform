@@ -8,8 +8,8 @@ const Header = () => {
 
     const dropdownData = {
       courses: [
-        { name: 'Unburdening Trauma', path: '/courses/trauma' },
-        { name: 'Unburdening Love', path: '/courses/love' },
+        { name: 'Unburdening Trauma', path: '/course/1' },
+        { name: 'Unburdening Love', path: '/course/2' },
         { name: 'All Courses', path: '/courses' }
       ],
       resources: [
@@ -69,7 +69,7 @@ const Header = () => {
             </button>
           </div>          <div className="flex-1 flex justify-center md:justify-start">
             <Link to="/" className="flex items-center">
-              <img src="mindplanner_new_logo.png" alt="mindplanner_logo" className="h-20 w-auto cursor-pointer hover:opacity-90 transition-opacity duration-200" />
+              <img src="/mindplanner_new_logo.png" alt="mindplanner_logo" className="h-20 w-auto cursor-pointer hover:opacity-90 transition-opacity duration-200" />
             </Link>
           </div><div className="hidden md:flex flex-1 justify-center">            <div className="flex space-x-8 relative">
               {/* Courses Dropdown */}

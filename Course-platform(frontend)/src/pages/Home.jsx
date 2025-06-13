@@ -3,13 +3,12 @@ import Header from '../pages/Header'
 import Footer from '../pages/Footer'
 
 const Home = () => {
-
   const courses = [
     {
       id: 1,
       title: "Understanding Trauma",
       description: "A self-paced program",
-      img_src: "1.png",
+      img_src: "/1.png",
       img_alt: "Understanding Trauma Course",
       category: "BUNDLE"
     },
@@ -17,23 +16,23 @@ const Home = () => {
       id: 2,
       title: "Understanding Love",
       description: "A comprehensive guide",
-      img_src: "love_course.png",
-      img_alt: "Understanding Trauma Course",
+      img_src: "/love_course.png",
+      img_alt: "Understanding Love Course",
       category: "BUNDLE"
     },
     {
       id: 3,
       title: "Course Bundle",
       description: "Complete transformation",
-      img_src: "1.png",
-      img_alt: "Understanding Trauma Course",
+      img_src: "/1.png",
+      img_alt: "Course Bundle",
       category: "BUNDLE"
     },
     {
       id: 4,
       title: "Unlocked Power Journal",
       description: "Mindmaster series",
-      img_src: "themindplanner primary.png",
+      img_src: "/themindplanner primary.png",
       img_alt: "Unlocked Power Journal",
       category: "JOURNAL"
     },
@@ -41,7 +40,7 @@ const Home = () => {
       id: 5,
       title: "Power Bundle",
       description: "Complete package",
-      img_src: "themindplanner primary.png",
+      img_src: "/themindplanner primary.png",
       img_alt: "Power Bundle",
       category: "BUNDLE"
     }

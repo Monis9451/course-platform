@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="container px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="flex flex-col items-start">
-              <img src="mindplanner_new_logo.png" alt="mindplanner_logo" className="h-20 md:h-24 mb-3 object-contain" style={{ maxWidth: '100%' }} />
+              <img src="/mindplanner_new_logo.png" alt="mindplanner_logo" className="h-20 md:h-24 mb-3 object-contain" style={{ maxWidth: '100%' }} />
               <p className="text-sm text-white/90">
                 Helping you unlock your full potential through evidence-based psychology.
               </p>
