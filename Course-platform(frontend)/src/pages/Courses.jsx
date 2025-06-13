@@ -49,8 +49,8 @@ const Courses = () => {
       <section className="py-20">        <div className="container mx-auto px-4">
           {isLoading ? (
             <div className="flex flex-col items-center justify-center py-20">
-              <div className="w-12 h-12 border-4 border-[#bd6334] border-t-transparent rounded-full animate-spin mb-4"></div>
-              <p className="text-[#bd6334] text-lg">Loading courses...</p>
+              <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin mb-4"></div>
+              <p className="text-primary text-lg">Loading courses...</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -71,13 +71,13 @@ const Courses = () => {
                     </p>                    <div className="flex gap-4">
                       <button 
                         onClick={() => window.location.href = `/checkout/${course.id}`}
-                        className="bg-[#bd6334] hover:bg-[#a3532c] text-white px-8 py-2 rounded-none transition-colors duration-200"
+                        className="bg-primary hover:bg-[#a3532c] text-white px-8 py-2 rounded-none transition-colors duration-200"
                       >
                         Buy Now
                       </button>
                       <button 
                         onClick={() => window.location.href = `/course/${course.id}`}
-                        className="border border-[#bd6334] text-[#bd6334] hover:bg-[#bd6334] hover:text-white px-8 py-2 rounded-none transition-colors duration-200"
+                        className="border border-primary text-[#bd6334] hover:bg-[#bd6334] hover:text-white px-8 py-2 rounded-none transition-colors duration-200"
                       >
                         Learn More
                       </button>
@@ -91,7 +91,7 @@ const Courses = () => {
       </section>
 
       {/* Call to action section */}
-      <section className="bg-[#bd6334] py-16">
+      <section className="bg-primary py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">Ready to Begin Your Journey?</h2>          <p className="text-white text-lg mb-8 max-w-2xl mx-auto">
             Enroll in one of our transformative courses today and take the first step toward healing and growth.

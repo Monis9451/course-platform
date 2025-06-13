@@ -120,7 +120,7 @@ const Home = () => {
           </div>
         </div>
       </section>        {/* You Will Overcome Section */}
-      <section className="w-full py-16 bg-primary">
+      <section className="w-full py-16 bg-cream">
         <div className="container px-4 md:px-6 max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {/* Video */}
@@ -222,7 +222,7 @@ const Home = () => {
                 </div>
                 <button
                   onClick={() => window.location.href = "/checkout/1"}
-                  className="flex w-full bg-[#bd6334] hover:bg-[#a65525] text-white px-6 py-6 rounded-none text-lg tracking-wider group-hover:bg-[#a65525]"
+                  className="flex w-full bg-primary hover:bg-primary text-white px-6 py-6 rounded-none text-lg tracking-wider group-hover:bg-[#a65525]"
                 >
                   BUY THIS COURSE
                   <svg className="pt-1.5 ml-2 h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -231,12 +231,12 @@ const Home = () => {
                 </button>
                 <div className="mt-4 flex flex-col space-y-2">
                   <a href="/course/1/landing">
-                    <div className="text-[#bd6334] hover:text-[#a65525] font-medium uppercase text-sm tracking-wider text-center">
+                    <div className="text-primary hover:text-primary font-medium uppercase text-sm tracking-wider text-center">
                       Learn More
                     </div>
                   </a>
                   <a href="/course-content/1">
-                    <div className="bg-[#bd6334] text-white py-2 px-4 text-center text-sm font-medium hover:bg-[#a65525]">
+                    <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium hover:bg-[#a65525]">
                       View Course Content
                     </div>
                   </a>
