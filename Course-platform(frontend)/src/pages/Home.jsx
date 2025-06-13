@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
+import Header from '../pages/Header'
+import Footer from '../pages/Footer'
 
 const Home = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const courses = [
     {
@@ -48,60 +49,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-cream">
-      <nav className="bg-primary px-4 py-3 top-0 z-50 shadow">
-        <div className="flex items-center justify-between max-w-7xl mx-auto relative">
-          <div className="flex flex-1 items-center md:hidden">
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-white focus:outline-none">
-              <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d={!isMobileMenuOpen ? "M4 6h16M4 12h16M4 18h16" : "M6 18L18 6M6 6l12 12"}
-                />
-              </svg>
-            </button>
-          </div>
-          <div className="flex-1 flex justify-center md:justify-start">
-            <img src="mindplanner_new_logo.png" alt="mindplanner_logo" className="h-20 w-auto" />
-          </div>
-          <div className="hidden md:flex flex-1 justify-center">
-            <div className="flex space-x-8">
-              <button className="text-white hover:text-orange-200 text-[1.3rem]">Courses</button>
-              <button className="text-white hover:text-orange-200 text-[1.3rem]">Journals</button>
-              <button className="text-white hover:text-orange-200 text-[1.3rem]">Resources</button>
-              <button className="text-white hover:text-orange-200 text-[1.3rem]">Support</button>
-              <button className="text-white hover:text-orange-200 text-[1.3rem]">About</button>
-            </div>
-          </div>
-          <div className="flex-1 flex justify-end">
-            <button className="text-white hover:text-orange-200 text-2xl mr-1">Log In</button>
-          </div>
-        </div>
-        <div
-          className={`fixed inset-y-0 left-0 z-40 w-64 transition-transform duration-500 ${
-            isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-          } bg-primary shadow-lg flex flex-col p-6 space-y-4 md:hidden`}
-          style={{ pointerEvents: isMobileMenuOpen ? "auto" : "none" }}
-        >
-          <button
-            className="absolute top-4 right-4 text-white"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-          <button className="text-white hover:text-orange-200 text-xl text-left">Courses</button>
-          <button className="text-white hover:text-orange-200 text-xl text-left">Journals</button>
-          <button className="text-white hover:text-orange-200 text-xl text-left">Resources</button>
-          <button className="text-white hover:text-orange-200 text-xl text-left">Support</button>
-          <button className="text-white hover:text-orange-200 text-xl text-left">About</button>
-        </div>
-      </nav>
-
+      <Header />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Hero Section */}
         <div className="text-center mb-16">
@@ -369,56 +317,7 @@ const Home = () => {
                 </div>
               </div> 
               </section>
-
-               {/* Footer */}
-      <footer className="w-full py-8 bg-primary text-white">
-        <div className="container px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="flex flex-col items-start">
-              <img src="mindplanner_new_logo.png" alt="mindplanner_logo" className="h-20 md:h-24 mb-3 object-contain" style={{ maxWidth: '100%' }} />
-              <p className="text-sm text-white/90">
-                Helping you unlock your full potential through evidence-based psychology.
-              </p>
-            </div>
-            
-            <div>
-              <h4 className="font-medium mb-4">Courses</h4>
-              <ul className="space-y-2 text-sm text-white/70">
-                <li><a href="#" className="hover:text-white">Unburdening Trauma</a></li>
-                <li><a href="#" className="hover:text-white">Unburdening Love</a></li>
-                <li><a href="#" className="hover:text-white">Course Bundle</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-medium mb-4">Resources</h4>
-              <ul className="space-y-2 text-sm text-white/70">
-                <li><a href="#" className="hover:text-white">Blog</a></li>
-                <li><a href="#" className="hover:text-white">Podcast</a></li>
-                <li><a href="#" className="hover:text-white">Free Resources</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-medium mb-4">Connect</h4>
-              <ul className="space-y-2 text-sm text-white/70">
-                <li><a href="#" className="hover:text-white">Instagram</a></li>
-                <li><a href="#" className="hover:text-white">Facebook</a></li>
-                <li><a href="#" className="hover:text-white">Contact Us</a></li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="mt-8 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-white/60">© 2024 The Mind Planner. All rights reserved.</p>
-            <div className="flex space-x-4 mt-4 md:mt-0">
-              <a href="#" className="text-sm text-white/60 hover:text-white">Privacy Policy</a>
-              <a href="#" className="text-sm text-white/60 hover:text-white">Terms of Service</a>
-            </div>
-          </div>
-        </div>
-      </footer>
-        
+      <Footer />
     </div>
   )
 }
