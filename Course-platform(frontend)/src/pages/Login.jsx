@@ -7,22 +7,21 @@ const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
   return (
     <div>
-        <Header />
-        <div className="container mx-auto px-4 py-20">
-        <div className="max-w-md mx-auto bg-[#f7f1e9] p-8 shadow-md">
+        <Header />        <div className="container mx-auto px-4 py-20">
+        <div className="max-w-md mx-auto bg-cream p-8 shadow-md">
           <h1 className="text-3xl font-serif text-center text-black mb-8">
             {isLogin ? "Log In to Your Account" : "Create an Account"}
           </h1>
           
           <div className="flex mb-8">
             <button 
-              className={`flex-1 py-2 text-center ${isLogin ? 'bg-[#bd6334] text-white' : 'bg-white text-black'}`}
+              className={`flex-1 py-2 text-center ${isLogin ? 'bg-primary text-white' : 'bg-white text-black'}`}
               onClick={() => setIsLogin(true)}
             >
               Log In
             </button>
             <button 
-              className={`flex-1 py-2 text-center ${!isLogin ? 'bg-[#bd6334] text-white' : 'bg-white text-black'}`}
+              className={`flex-1 py-2 text-center ${!isLogin ? 'bg-primary text-white' : 'bg-white text-black'}`}
               onClick={() => setIsLogin(false)}
             >
               Sign Up
@@ -35,11 +34,10 @@ const Login = () => {
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-black mb-1">
                     Full Name
-                  </label>
-                  <input
+                  </label>                  <input
                     id="name"
                     type="text"
-                    className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#bd6334]"
+                    className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
                     placeholder="Enter your full name"
                   />
                 </div>
@@ -53,7 +51,7 @@ const Login = () => {
               <input
                 id="email"
                 type="email"
-                className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#bd6334]"
+                className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
                 placeholder="Enter your email"
               />
             </div>
@@ -65,14 +63,14 @@ const Login = () => {
               <input
                 id="password"
                 type="password"
-                className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#bd6334]"
+                className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
                 placeholder="Enter your password"
               />
             </div>
             
             {isLogin ? (
               <div className="text-right">
-                <a href="#" className="text-sm text-[#bd6334] hover:underline">
+                <a href="#" className="text-sm text-primary hover:underline">
                   Forgot password?
                 </a>
               </div>
@@ -84,12 +82,12 @@ const Login = () => {
                 <input
                   id="confirmPassword"
                   type="password"
-                  className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#bd6334]"
+                  className="w-full px-4 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
                   placeholder="Confirm your password"
                 />
               </div>            )}
             
-            <button className="w-full bg-[#bd6334] hover:bg-[#a3532c] text-white py-3 rounded-none">
+            <button className="w-full bg-primary hover:bg-primary-dark text-white py-3 rounded-none">
               {isLogin ? "Log In" : "Create Account"}
             </button>
           </form>
@@ -111,7 +109,7 @@ const Login = () => {
             <p className="text-black">
               {isLogin ? "Don't have an account? " : "Already have an account? "}
               <button 
-                className="text-[#bd6334] hover:underline"
+                className="text-primary hover:underline"
                 onClick={() => setIsLogin(!isLogin)}
               >
                 {isLogin ? "Sign up" : "Log in"}
