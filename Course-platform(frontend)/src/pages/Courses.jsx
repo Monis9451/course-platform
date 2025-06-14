@@ -37,7 +37,7 @@ const Courses = () => {
         {/* Hero section */}
       <section className="bg-[#f7f1e9] py-20">
         <div className="container mx-auto px-4">
-          <h1 className="text-5xl md:text-6xl font-serif text-center text-black mb-6">Our Courses</h1>
+          <h1 className="text-4xl md:text-5xl font-serif text-center text-black mb-6">Our Courses</h1>
           <p className="text-xl text-center text-black max-w-3xl mx-auto mb-10">
             Transform your life with our professionally crafted self-paced courses designed to help you heal, grow, and thrive.
           </p>

@@ -223,7 +223,7 @@ const CourseDetails = () => {  const { id } = useParams()
   const progressPercentage = calculateProgress()
 
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-cream font-fitzgerald font-thin">
       <Header />
       
       {/* Breadcrumbs */}
@@ -255,7 +255,7 @@ const CourseDetails = () => {  const { id } = useParams()
                 </span>
               </div>
               
-              <h1 className="text-4xl md:text-5xl font-serif text-black mb-6 leading-tight">
+              <h1 className="text-3xl md:text-4xl font-serif text-black mb-6 leading-tight">
                 {course.title}: {course.subtitle}
               </h1>
               

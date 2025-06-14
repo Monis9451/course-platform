@@ -51,8 +51,8 @@ const Header = () => {
     }, [])
 
   return (
-    <div>
-        <nav className="bg-primary px-4 py-3 top-0 z-50 shadow">
+    <div className="pt-24">
+        <nav className="bg-primary px-4 py-3 fixed top-0 w-full z-50 shadow">
         <div className="flex items-center justify-between max-w-7xl mx-auto relative">
           <div className="flex flex-1 items-center md:hidden">
             <button

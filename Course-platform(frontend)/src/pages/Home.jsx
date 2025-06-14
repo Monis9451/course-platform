@@ -55,7 +55,7 @@ const Home = () => {
           <p className="text-primary text-sm font-semibold tracking-wide uppercase mb-4">
             THE #1 PLATFORM FOR PSYCHOLOGICAL TRANSFORMATION
           </p>
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+          <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
             Transform Your Mind, Break Barriers, and Unlock Your Full Potential – at Your Own Pace
           </h1>
           <p className="text-lg text-warm-gray max-w-4xl mx-auto mb-8 leading-relaxed">

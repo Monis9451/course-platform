@@ -7,6 +7,7 @@ import CourseDetails from './pages/CourseDetails'
 
 const App = () => {
   return (
+  <div className="font-fitzgerald font-thin bg-white text-black min-h-screen">
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -15,6 +16,8 @@ const App = () => {
         <Route path="/course/:id" element={<CourseDetails />} />
       </Routes>
     </Router>
+  </div>
+    
   )
 }
 
