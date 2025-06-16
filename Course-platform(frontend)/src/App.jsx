@@ -6,6 +6,7 @@ import Courses from './pages/Courses'
 import CourseDetails from './pages/CourseDetails'
 import CourseLanding from './pages/CourseLanding'
 import About from './pages/About'
+import Error from './pages/404'
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/course/:id" element={<CourseDetails />} />
         <Route path="/course/:id/landing" element={<CourseLanding />} />
         <Route path="/about" element={<About />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </Router>
   </div>
