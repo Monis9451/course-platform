@@ -5,6 +5,7 @@ import Login from './pages/Login'
 import Courses from './pages/Courses'
 import CourseDetails from './pages/CourseDetails'
 import CourseLanding from './pages/CourseLanding'
+import About from './pages/About'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/courses" element={<Courses />} />
         <Route path="/course/:id" element={<CourseDetails />} />
         <Route path="/course/:id/landing" element={<CourseLanding />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </Router>
   </div>

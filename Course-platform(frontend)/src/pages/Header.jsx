@@ -24,7 +24,7 @@ const Header = () => {
         { name: 'FAQ', path: '/support/faq' },
         { name: 'Help Center', path: '/support/help' }
       ],      about: [
-        { name: 'Our Story', path: '/about/story' },
+        { name: 'Our Story', path: '/about' },
         { name: 'Meet Dr. Samina', path: '/about/team' },
         { name: 'About The Mind Planner', path: '/about/mission' }
       ]
@@ -87,17 +87,17 @@ const Header = () => {
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
-                </button>
-                {activeDropdown === 'courses' && (
+                </button>                {activeDropdown === 'courses' && (
                   <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 animate-in slide-in-from-top-2 duration-200">
                     {dropdownData.courses.map((item, index) => (
-                      <a
+                      <Link
                         key={index}
-                        href={item.path}
+                        to={item.path}
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600"
+                        onClick={() => setActiveDropdown(null)}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 )}
@@ -119,17 +119,17 @@ const Header = () => {
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
-                </button>
-                {activeDropdown === 'resources' && (
+                </button>                {activeDropdown === 'resources' && (
                   <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 animate-in slide-in-from-top-2 duration-200">
                     {dropdownData.resources.map((item, index) => (
-                      <a
+                      <Link
                         key={index}
-                        href={item.path}
+                        to={item.path}
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600"
+                        onClick={() => setActiveDropdown(null)}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 )}
@@ -148,17 +148,17 @@ const Header = () => {
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
-                </button>
-                {activeDropdown === 'support' && (
+                </button>                {activeDropdown === 'support' && (
                   <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 animate-in slide-in-from-top-2 duration-200">
                     {dropdownData.support.map((item, index) => (
-                      <a
+                      <Link
                         key={index}
-                        href={item.path}
+                        to={item.path}
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600"
+                        onClick={() => setActiveDropdown(null)}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 )}
@@ -177,17 +177,17 @@ const Header = () => {
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
-                </button>
-                {activeDropdown === 'about' && (
+                </button>                {activeDropdown === 'about' && (
                   <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 animate-in slide-in-from-top-2 duration-200">
                     {dropdownData.about.map((item, index) => (
-                      <a
+                      <Link
                         key={index}
-                        href={item.path}
+                        to={item.path}
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600"
+                        onClick={() => setActiveDropdown(null)}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 )}
@@ -231,17 +231,20 @@ const Header = () => {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
-            </button>
-            {mobileActiveDropdown === 'courses' && (
+            </button>            {mobileActiveDropdown === 'courses' && (
               <div className="ml-4 mt-2 space-y-2 animate-in slide-in-from-top-2 duration-200">
                 {dropdownData.courses.map((item, index) => (
-                  <a
+                  <Link
                     key={index}
-                    href={item.path}
+                    to={item.path}
                     className="block text-orange-200 hover:text-white text-lg"
+                    onClick={() => {
+                      setMobileActiveDropdown(null)
+                      setIsMobileMenuOpen(false)
+                    }}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             )}
@@ -265,17 +268,20 @@ const Header = () => {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
-            </button>
-            {mobileActiveDropdown === 'resources' && (
+            </button>            {mobileActiveDropdown === 'resources' && (
               <div className="ml-4 mt-2 space-y-2 animate-in slide-in-from-top-2 duration-200">
                 {dropdownData.resources.map((item, index) => (
-                  <a
+                  <Link
                     key={index}
-                    href={item.path}
+                    to={item.path}
                     className="block text-orange-200 hover:text-white text-lg"
+                    onClick={() => {
+                      setMobileActiveDropdown(null)
+                      setIsMobileMenuOpen(false)
+                    }}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             )}
@@ -296,17 +302,20 @@ const Header = () => {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
-            </button>
-            {mobileActiveDropdown === 'support' && (
+            </button>            {mobileActiveDropdown === 'support' && (
               <div className="ml-4 mt-2 space-y-2 animate-in slide-in-from-top-2 duration-200">
                 {dropdownData.support.map((item, index) => (
-                  <a
+                  <Link
                     key={index}
-                    href={item.path}
+                    to={item.path}
                     className="block text-orange-200 hover:text-white text-lg"
+                    onClick={() => {
+                      setMobileActiveDropdown(null)
+                      setIsMobileMenuOpen(false)
+                    }}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             )}
@@ -327,17 +336,21 @@ const Header = () => {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
-            </button>
-            {mobileActiveDropdown === 'about' && (
+            </button>            {mobileActiveDropdown === 'about' && (
               <div className="ml-4 mt-2 space-y-2 animate-in slide-in-from-top-2 duration-200">
                 {dropdownData.about.map((item, index) => (
-                  <a
+                  <Link
                     key={index}
-                    href={item.path}
+                    to={item.path}
                     className="block text-orange-200 hover:text-white text-lg"
+                    onClick={() => {
+                      setMobileActiveDropdown(null)
+                      setIsMobileMenuOpen(false)
+                    }}
                   >
                     {item.name}
-                  </a>                ))}
+                  </Link>
+                ))}
               </div>
             )}
           </div>

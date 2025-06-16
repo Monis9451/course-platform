@@ -11,12 +11,11 @@ const dummyCoursesData = {
     subtitle: "A 6-Week Self-Paced Course",
     description: "Break free from trauma patterns and discover deep healing with evidence-based techniques in this comprehensive self-paced program.",
     fullDescription: "Unpacking the Science of Trauma, Trauma Responses, and Why We Get 'Stuck'",
-    instructor: "Dr. Samina Khatun",
-    duration: "6 weeks",
+    instructor: "Dr. Samina Khatun",    duration: "6 weeks",
     lessons: 24,
     level: "ALL LEVELS",    price: 75,
     featured: true,
-    img_src: "/1.png",
+    img_src: "/love_course.png",
     img_alt: "Understanding Trauma Course",
     modules: [
       {
@@ -376,23 +375,31 @@ const CourseDetails = () => {  const { id } = useParams()
                 >
                   <FiShoppingCart className="w-5 h-5" />
                   Buy Now - £{course.price}
-                </button>
-              </div>
+                </button>              </div>
             </div>
             
             <div className="relative">
-              <div className="bg-black rounded-lg overflow-hidden aspect-video relative">
+              <div className="bg-gray-200 rounded-lg overflow-hidden aspect-video relative">
                 <img 
                   src={course.img_src} 
                   alt={course.img_alt}
                   className="w-full h-full object-cover"
+                  onError={(e) => {
+                    console.error('Image failed to load:', course.img_src);
+                    // Hide the broken image and show a gradient background
+                    e.target.style.display = 'none';
+                    e.target.parentElement.style.background = 'linear-gradient(135deg, #bd6334 0%, #a65525 100%)';
+                  }}
+                  onLoad={() => {
+                    console.log('Image loaded successfully:', course.img_src);
+                  }}
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
                   <button 
                     onClick={handleStartCourse}
-                    className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors"
+                    className="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-all duration-300 hover:scale-110"
                   >
-                    <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
                     </svg>
                   </button>
