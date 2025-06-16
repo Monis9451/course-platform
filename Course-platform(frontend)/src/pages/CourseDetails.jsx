@@ -44,7 +44,28 @@ const dummyCoursesData = {
             description: "Practical exercise to help you create space for healing by detaching from unhelpful patterns.",
             duration: "15 minutes",
             completed: false
-          }
+          },
+          {
+            id: 4,
+            title: "Meet Your Subconscious",
+            description: "Discover the deeper patterns that drive your responses to stress and emotional triggers.",
+            duration: "25 minutes",
+            completed: false
+          },
+          {
+            id: 5,
+            title: "Understanding Your Trauma Responses",
+            description: "Learn to identify your personal trauma responses and what triggers them.",
+            duration: "20 minutes",
+            completed: false
+          },
+          {
+            id: 6,
+            title: "The Amygdala and Fear Response",
+            description: "How your brain processes trauma and why you respond the way you do.",
+            duration: "15 minutes",
+            completed: false
+          },
         ]
       },
       {
@@ -53,19 +74,68 @@ const dummyCoursesData = {
         description: "Learn powerful techniques for healing trauma through self-compassion and mindful awareness.",
         lessons: [
           {
-            id: 4,
-            title: "Introduction to Self-Compassion",
-            description: "Understanding the three components of self-compassion and how they support trauma healing.",
+            id: 7,
+            title: "Understanding Embodiment",
+            description: "Learn what it means to be embodied and why trauma disconnects us from our bodies.",
+            duration: "22 minutes",
+            completed: false
+          },
+          {
+            id: 8,
+            title: "Grounding Techniques",
+            description: "Practical tools to help you ground when feeling triggered or disconnected.",
+            duration: "25 minutes",
+            completed: false
+          },
+          {
+            id: 9,
+            title: "Body Scan Meditation",
+            description: "A guided practice to help you reconnect with physical sensations safely.",
+            duration: "18 minutes",
+            completed: false
+          },
+          {
+            id: 10,
+            title: "Creating Safety in Your Body",
+            description: "ow to build a sense of safety that allows trauma to release.",
+            duration: "24 minutes",
+            completed: false
+          },
+        ]
+      },
+      {
+        id: 3,
+        title: "Inner Child Healing – Reconnecting with Your Younger Self",
+        description: "Healing the Wounds of the Past by Nurturing the Inner Child",
+        lessons: [
+          {
+            id: 11,
+            title: "Understanding the Inner Child",
+            description: "Learn what the “inner child” represents and why healing this part of yourself is essential.",
             duration: "20 minutes",
             completed: false
           },
           {
-            id: 5,
-            title: "Mindful Awareness of Trauma Responses",
-            description: "Developing mindful awareness of your trauma responses without judgment.",
+            id: 12,
+            title: "Identifying Childhood Wounds",
+            description: "Recognize the core wounds from childhood that are still affecting you.",
             duration: "25 minutes",
             completed: false
-          }
+          },
+          {
+            id: 13,
+            title: "Inner Child Dialogue Practice",
+            description: "A guided practice to connect with and reassure your inner child.",
+            duration: "30 minutes",
+            completed: false
+          },
+          {
+            id: 14,
+            title: "Reparenting Yourself",
+            description: "Learn to give yourself the care, validation and boundaries you needed as a child.",
+            duration: "28 minutes",
+            completed: false
+          },
         ]
       }
     ]
