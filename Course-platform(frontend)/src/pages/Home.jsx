@@ -1,8 +1,11 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import Header from '../pages/Header'
 import Footer from '../pages/Footer'
 
 const Home = () => {
+  const navigate = useNavigate()
+  
   const courses = [
     {
       id: 1,
@@ -45,6 +48,10 @@ const Home = () => {
       category: "BUNDLE"
     }
   ];
+
+  const handleStartCourse = (courseId) => {
+    navigate(`/course-content/${courseId}`)
+  }
 
   return (
     <div className="min-h-screen bg-cream">
@@ -234,11 +241,12 @@ const Home = () => {
                       Learn More
                     </div>
                   </a>
-                  <a href="/course-content/1">
-                    <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium hover:bg-[#a65525]">
-                      View Course Content
-                    </div>
-                  </a>
+                  <button 
+                    onClick={() => handleStartCourse(1)}
+                    className="bg-primary text-white py-2 px-4 text-center text-sm font-medium hover:bg-[#a65525] cursor-pointer"
+                  >
+                    Start Course
+                  </button>
                 </div>
               </div>
             </div>
@@ -278,11 +286,12 @@ const Home = () => {
                       Learn More
                     </div>
                   </a>
-                  <a href="/course-content/1">
-                    <div className="bg-primary text-white py-2 px-4 text-center text-sm font-medium hover:bg-[#a65525]">
-                      View Course Content
-                    </div>
-                  </a>
+                  <button 
+                    onClick={() => handleStartCourse(2)}
+                    className="bg-primary text-white py-2 px-4 text-center text-sm font-medium hover:bg-[#a65525] cursor-pointer"
+                  >
+                    Start Course
+                  </button>
                 </div>
               </div>
             </div>

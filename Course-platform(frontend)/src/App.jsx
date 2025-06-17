@@ -6,6 +6,7 @@ import Courses from './pages/Courses'
 import CourseDetails from './pages/CourseDetails'
 import CourseLanding from './pages/CourseLanding'
 import About from './pages/About'
+import CourseContent from './pages/CourseContent'
 import Error from './pages/404'
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/course/:id" element={<CourseDetails />} />
         <Route path="/course/:id/landing" element={<CourseLanding />} />
         <Route path="/about" element={<About />} />
+        <Route path="/course-content/:id" element={<CourseContent />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </Router>
