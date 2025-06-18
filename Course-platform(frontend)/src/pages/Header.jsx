@@ -12,21 +12,15 @@ const Header = () => {
         { name: 'Unburdening Love', path: '/course/2' },
         { name: 'All Courses', path: '/courses' }
       ],
-      resources: [
-        { name: 'Mindfulness', path: '/resources/articles' },
-        { name: 'Emotional Health', path: '/resources/videos' },
-        { name: 'Relationships', path: '/resources/downloads' },
-        { name: 'Healing', path: '/resources/videos' },
-        { name: 'All Resources', path: '/resources/videos' }
-      ],
       support: [
-        { name: 'Contact Us', path: '/support/contact' },
-        { name: 'FAQ', path: '/support/faq' },
-        { name: 'Help Center', path: '/support/help' }
-      ],      about: [
+        { name: 'Contact Us', path: '/support' },
+        { name: 'FAQ', path: '/support' },
+        { name: 'Help Center', path: '/support' }
+      ],      
+      about: [
         { name: 'Our Story', path: '/about' },
-        { name: 'Meet Dr. Samina', path: '/about/team' },
-        { name: 'About The Mind Planner', path: '/about/mission' }
+        { name: 'Meet Dr. Samina', path: '/about' },
+        { name: 'About The Mind Planner', path: '/about' }
       ]
     }
 
@@ -100,40 +94,9 @@ const Header = () => {
                       </Link>
                     ))}
                   </div>
-                )}
-              </div>
+                )}              </div>
 
-              {/* Journals - No dropdown */}
-              <button className="text-white hover:text-orange-200 text-[1.3rem]">Journals</button>              {/* Resources Dropdown */}
-              <div className="relative dropdown-container">
-                <button 
-                  onClick={() => handleDropdownToggle('resources')}
-                  className="text-white hover:text-orange-200 text-[1.3rem] flex items-center space-x-1"
-                >
-                  <span>Resources</span>
-                  <svg 
-                    className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === 'resources' ? 'rotate-180' : ''}`} 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>                {activeDropdown === 'resources' && (
-                  <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 animate-in slide-in-from-top-2 duration-200">
-                    {dropdownData.resources.map((item, index) => (
-                      <Link
-                        key={index}
-                        to={item.path}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600"
-                        onClick={() => setActiveDropdown(null)}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>              {/* Support Dropdown */}
+              {/* Support Dropdown */}
               <div className="relative dropdown-container">
                 <button 
                   onClick={() => handleDropdownToggle('support')}
@@ -194,7 +157,7 @@ const Header = () => {
               </div>
             </div>
           </div>          <div className="flex-1 flex justify-end">
-            <Link to="/login" className="text-white hover:text-orange-200 text-2xl mr-1 transition-colors duration-200">
+            <Link to="/login" className="text-white hover:text-orange-200 text-1xl mr-1 transition-colors duration-200 border-2 border-cream rounded-full px-8 py-2">
               Log In
             </Link>
           </div>
@@ -247,46 +210,8 @@ const Header = () => {
                   </Link>
                 ))}
               </div>
-            )}
-          </div>
+            )}          </div>
 
-          {/* Journals - No dropdown */}
-          <button className="text-white hover:text-orange-200 text-xl text-left">Journals</button>
-          
-          {/* Resources Mobile Dropdown */}
-          <div>
-            <button 
-              onClick={() => handleMobileDropdownToggle('resources')}
-              className="text-white hover:text-orange-200 text-xl text-left w-full flex items-center justify-between"
-            >
-              <span>Resources</span>
-              <svg 
-                className={`w-5 h-5 transition-transform duration-200 ${mobileActiveDropdown === 'resources' ? 'rotate-180' : ''}`} 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>            {mobileActiveDropdown === 'resources' && (
-              <div className="ml-4 mt-2 space-y-2 animate-in slide-in-from-top-2 duration-200">
-                {dropdownData.resources.map((item, index) => (
-                  <Link
-                    key={index}
-                    to={item.path}
-                    className="block text-orange-200 hover:text-white text-lg"
-                    onClick={() => {
-                      setMobileActiveDropdown(null)
-                      setIsMobileMenuOpen(false)
-                    }}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-          
           {/* Support Mobile Dropdown */}
           <div>
             <button 

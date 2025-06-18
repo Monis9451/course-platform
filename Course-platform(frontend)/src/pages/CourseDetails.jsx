@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { useParams, Link, useNavigate } from 'react-router-dom'
-import { FiShoppingCart, FiUser, FiClock, FiPlayCircle } from 'react-icons/fi'
+import { useParams, Link } from 'react-router-dom'
+import { FiUser, FiClock } from 'react-icons/fi'
+import { FaCheckCircle } from 'react-icons/fa'
 import Header from '../pages/Header'
 
 // Dummy course data - replace with actual API calls when database is ready
@@ -10,10 +11,11 @@ const dummyCoursesData = {
     title: "Understanding Trauma",
     subtitle: "A 6-Week Self-Paced Course",
     description: "Break free from trauma patterns and discover deep healing with evidence-based techniques in this comprehensive self-paced program.",
-    fullDescription: "Unpacking the Science of Trauma, Trauma Responses, and Why We Get 'Stuck'",
-    instructor: "Dr. Samina Khatun",    duration: "6 weeks",
+    fullDescription: "Unpacking the Science of Trauma, Trauma Responses, and Why We Get 'Stuck'",    instructor: "Dr. Samina Khatun",
+    duration: "6 weeks",
     lessons: 24,
-    level: "ALL LEVELS",    price: 75,
+    level: "ALL LEVELS",
+    price: 75,
     featured: true,
     img_src: "/love_course.png",
     img_alt: "Understanding Trauma Course",
@@ -96,7 +98,7 @@ const dummyCoursesData = {
           {
             id: 10,
             title: "Creating Safety in Your Body",
-            description: "ow to build a sense of safety that allows trauma to release.",
+            description: "How to build a sense of safety that allows trauma to release.",
             duration: "24 minutes",
             completed: false
           },
@@ -148,7 +150,8 @@ const dummyCoursesData = {
     instructor: "Dr. Samina Khatun",
     duration: "6 weeks",
     lessons: 20,
-    level: "ALL LEVELS",    price: 75,
+    level: "ALL LEVELS",
+    price: 75,
     featured: true,
     img_src: "/love_course.png",
     img_alt: "Understanding Love Course",
@@ -206,8 +209,9 @@ const dummyCoursesData = {
   }
 }
 
-const CourseDetails = () => {  const { id } = useParams()
-  const navigate = useNavigate()
+const CourseDetails = () => {
+  const { id } = useParams()
+  // const navigate = useNavigate() // Commented out for now
   const [course, setCourse] = useState(null)
   const [loading, setLoading] = useState(true)
   const [userProgress] = useState([]) // Mock user progress
@@ -224,40 +228,40 @@ const CourseDetails = () => {  const { id } = useParams()
 
     fetchCourse()
   }, [id])
+  // Calculate course progress - commented out for now
+  // const calculateProgress = () => {
+  //   if (!course || !userProgress.length) return 0
+  //   
+  //   let totalLessons = 0
+  //   let completedLessons = 0
+  //   
+  //   course.modules.forEach(module => {
+  //     totalLessons += module.lessons.length
+  //     module.lessons.forEach(lesson => {
+  //       if (userProgress.includes(lesson.id)) {
+  //         completedLessons++
+  //       }
+  //     })
+  //   })
+  //   
+  //   return totalLessons > 0 ? Math.round((completedLessons / totalLessons) * 100) : 0
+  // }
+  // Commented out unused functions for now - can be enabled when needed
+  // const handleStartCourse = () => {
+  //   if (course && course.modules.length > 0) {
+  //     const firstLesson = course.modules[0].lessons[0]
+  //     if (firstLesson) {
+  //       // For now, just show an alert - replace with actual lesson navigation
+  //       alert(`Starting lesson: ${firstLesson.title}`)
+  //       // navigate(`/lesson/${firstLesson.id}`)
+  //     }
+  //   }
+  // }
 
-  // Calculate course progress
-  const calculateProgress = () => {
-    if (!course || !userProgress.length) return 0
-    
-    let totalLessons = 0
-    let completedLessons = 0
-    
-    course.modules.forEach(module => {
-      totalLessons += module.lessons.length
-      module.lessons.forEach(lesson => {
-        if (userProgress.includes(lesson.id)) {
-          completedLessons++
-        }
-      })
-    })
-    
-    return totalLessons > 0 ? Math.round((completedLessons / totalLessons) * 100) : 0
-  }
-
-  const handleStartCourse = () => {
-    if (course && course.modules.length > 0) {
-      const firstLesson = course.modules[0].lessons[0]
-      if (firstLesson) {
-        // For now, just show an alert - replace with actual lesson navigation
-        alert(`Starting lesson: ${firstLesson.title}`)
-        // navigate(`/lesson/${firstLesson.id}`)
-      }
-    }
-  }
-  const handleBuyNow = () => {
-    // Navigate to checkout - replace with actual checkout page
-    navigate(`/checkout/${course.id}`)
-  }
+  // const handleBuyNow = () => {
+  //   // Navigate to checkout - replace with actual checkout page
+  //   navigate(`/checkout/${course.id}`)
+  // }
 
   const isLessonCompleted = (lessonId) => {
     return userProgress.includes(lessonId)
@@ -289,7 +293,7 @@ const CourseDetails = () => {  const { id } = useParams()
     )
   }
 
-  const progressPercentage = calculateProgress()
+  // const progressPercentage = calculateProgress()
 
   return (
     <div className="min-h-screen bg-cream font-fitzgerald font-thin">
@@ -306,104 +310,71 @@ const CourseDetails = () => {  const { id } = useParams()
             <span className="text-gray-600">{course.title}: {course.subtitle}</span>
           </nav>
         </div>
-      </div>
+      </div>      {/* Hero Section */}
+      <section className="bg-cream py-16 md:py-24">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-5xl mx-auto">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-medium mb-6 leading-tight text-center">
+              {course.title}: {course.subtitle}
+            </h1>
+            <h2 className="text-xl md:text-2xl text-black mb-8 text-center font-serif">
+              {course.description}
+            </h2>
+          </div>
+        </div>
+      </section>
 
-      {/* Course Header */}
-      <section className="bg-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
-              <div className="flex flex-wrap gap-2 mb-6">
-                {course.featured && (
-                  <span className="bg-primary text-white text-xs px-3 py-1 rounded uppercase font-medium">
-                    Featured
-                  </span>
-                )}
-                <span className="bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded uppercase font-medium">
+      {/* Course Info Section */}
+      <section className="bg-cream py-12 md:py-10">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="bg-white rounded-lg shadow-md p-6 md:p-10 flex flex-col md:flex-row gap-8 items-stretch max-w-5xl mx-auto">
+            {/* Left: Image + Info */}
+            <div className="w-full md:w-2/3 flex flex-col items-center">
+              {/* Course Image Placeholder */}
+              <div className="w-full h-48 md:h-64 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400 text-lg mb-6">
+                <img src="/3.png" alt="course image" />
+              </div>
+              {/* Duration & Level */}
+              <div className="flex items-center gap-6 mt-auto">
+                <span className="flex items-center text-warm-gray text-base">
+                  <FiClock className="mr-2" />
+                  {course.duration}
+                </span>
+                <span className="flex items-center text-warm-gray text-base">
+                  <FiUser className="mr-2" />
                   {course.level}
                 </span>
               </div>
-              
-              <h1 className="text-3xl md:text-4xl font-serif text-black mb-6 leading-tight">
-                {course.title}: {course.subtitle}
-              </h1>
-              
-              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                {course.description}
-              </p>
-                <div className="flex flex-wrap items-center gap-6 mb-8 text-sm text-gray-600">
-                <div className="flex items-center gap-2">
-                  <FiUser className="w-4 h-4" />
-                  <span>{course.instructor}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <FiClock className="w-4 h-4" />
-                  <span>{course.duration}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <FiPlayCircle className="w-4 h-4" />
-                  <span>{course.lessons} lessons</span>
-                </div>
-              </div>
-              
-              {progressPercentage > 0 && (
-                <div className="mb-6">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-medium text-gray-700">Course Progress</span>
-                    <span className="text-sm font-medium text-gray-700">{progressPercentage}%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2.5">
-                    <div 
-                      className="bg-green-500 h-2.5 rounded-full transition-all duration-300" 
-                      style={{ width: `${progressPercentage}%` }}
-                    ></div>
-                  </div>
-                </div>
-              )}
-                <div className="flex flex-col sm:flex-row gap-4">
-                <button 
-                  onClick={handleStartCourse}
-                  className="bg-primary hover:bg-primary-dark text-white px-8 py-4 text-lg font-medium transition-colors flex items-center justify-center gap-2"
-                >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                  </svg>
-                  {progressPercentage > 0 ? "Continue Course" : "Start Course"}
-                </button>                <button 
-                  onClick={handleBuyNow}
-                  className="border border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 text-lg font-medium transition-colors flex items-center justify-center gap-2"
-                >
-                  <FiShoppingCart className="w-5 h-5" />
-                  Buy Now - £{course.price}
-                </button>              </div>
             </div>
             
-            <div className="relative">
-              <div className="bg-gray-200 rounded-lg overflow-hidden aspect-video relative">
-                <img 
-                  src={course.img_src} 
-                  alt={course.img_alt}
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    console.error('Image failed to load:', course.img_src);
-                    // Hide the broken image and show a gradient background
-                    e.target.style.display = 'none';
-                    e.target.parentElement.style.background = 'linear-gradient(135deg, #bd6334 0%, #a65525 100%)';
-                  }}
-                  onLoad={() => {
-                    console.log('Image loaded successfully:', course.img_src);
-                  }}
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                  <button 
-                    onClick={handleStartCourse}
-                    className="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-all duration-300 hover:scale-110"
-                  >
-                    <svg className="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-                    </svg>
-                  </button>
-                </div>
+            {/* Right: Price & Features */}
+            <div className="w-full md:w-1/3 bg-gray-50 rounded-lg shadow p-6 flex flex-col justify-between">
+              <div>
+                <h3 className="text-xl font-serif font-medium mb-2 text-black">Course Price</h3>
+                <div className="text-3xl font-bold text-primary mb-6">£{course.price}.00</div>
+                <ul className="mb-6 space-y-3">
+                  <li className="flex items-center text-black">
+                    <FaCheckCircle className="text-primary mr-2" />
+                    Lifetime Access
+                  </li>
+                  <li className="flex items-center text-black">
+                    <FaCheckCircle className="text-primary mr-2" />
+                    24 Video Lessons
+                  </li>
+                  <li className="flex items-center text-black">
+                    <FaCheckCircle className="text-primary mr-2" />
+                    Downloadable Resources
+                  </li>
+                </ul>
+              </div>
+              <button
+                onClick={() => (window.location.href = `/checkout/${course.id}`)}
+                className="bg-primary hover:bg-primary-dark text-white font-medium px-6 py-3 rounded transition-colors duration-200 w-full mb-3"
+              >
+                Enroll Now
+              </button>
+              <div className="text-center text-primary mt-2 text-sm">
+                Try a free sample lesson
               </div>
             </div>
           </div>

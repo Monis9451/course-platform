@@ -32,6 +32,10 @@
   border-color: #B45B29;
 }
 
+.border-cream {
+  border-color: #FDF8F3;
+}
+
 .hover-primary:hover {
   background-color: #8B3A1A;
 }
