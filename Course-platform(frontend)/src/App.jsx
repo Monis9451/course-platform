@@ -10,7 +10,12 @@ import CourseContent from './pages/CourseContent'
 import Support from "./pages/Support";
 import Checkout from "./pages/Checkout";
 import ThankYou from "./pages/Thankyou";
-import Error from './pages/404'
+import Blogs from './pages/Blogs';
+import MentalHealth from './pages/MentalHealth';
+import PrivacyStatement from './pages/PrivacyStatement'
+import Disclaimer from './pages/Disclaimer';
+import ContactUs from './pages/ContactUs';
+import Error from './pages/404';
 
 const App = () => {
   return (
@@ -27,6 +32,11 @@ const App = () => {
         <Route path="/support" element={<Support />} />
         <Route path="/checkout/:id" element={<Checkout />} />
         <Route path="/thankyou" element={<ThankYou />} />
+        <Route path="/Blogs" element={<Blogs />} />
+        <Route path="/mental-health" element={<MentalHealth />} />
+        <Route path="/privacy-statement" element={<PrivacyStatement />} />
+        <Route path="/disclaimer" element={<Disclaimer />} />
+        <Route path="/contact-us" element={<ContactUs />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </Router>

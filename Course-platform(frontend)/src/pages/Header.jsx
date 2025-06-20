@@ -9,7 +9,9 @@ const Header = () => {    const [isMobileMenuOpen, setIsMobileMenuOpen] = React.
       { name: 'Unburdening Love', path: '/course/2' },
       { name: 'All Courses', path: '/courses' },
       { name: 'Help Center', path: '/support' },
-      { name: 'Our Story', path: '/about' },      { name: 'About The Mind Planner', path: '/about' }
+      { name: 'Our Story', path: '/about' },
+      { name: 'Blogs', path: '/blogs' },
+      { name: 'About The Mind Planner', path: '/about' }
     ]
 
     const dropdownData = {
@@ -23,7 +25,8 @@ const Header = () => {    const [isMobileMenuOpen, setIsMobileMenuOpen] = React.
       ],      
       about: [
         { name: 'Our Story', path: '/about' },
-        { name: 'About The Mind Planner', path: '/about' }
+        { name: 'About The Mind Planner', path: '/about' },
+        { name: 'Blogs', path: '/blogs' }
       ]
     }
 
