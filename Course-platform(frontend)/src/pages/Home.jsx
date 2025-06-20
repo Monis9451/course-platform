@@ -191,17 +191,12 @@ const Home = () => {
       id: 8,
       title: "Complete Wellness Pack",
       description: "Mind and body harmony",
-      img_src: "/1.png",
-      img_alt: "Complete Wellness Pack",
+      img_src: "/1.png",      img_alt: "Complete Wellness Pack",
       category: "BUNDLE"
     }
   ];
 
-  const handleStartCourse = (courseId) => {
-    navigate(`/course-content/${courseId}`)
-  }
-
-  return (    <div className="min-h-screen bg-cream">
+  return (<div className="min-h-screen bg-cream">
       <Header />
       
       {/* Testimonial Section */}
@@ -261,46 +256,43 @@ const Home = () => {
           </h1>
           <p className="text-lg text-warm-gray max-w-4xl mx-auto mb-8 leading-relaxed">
             Backed by evidence-based psychology and neuroscience, these courses are designed to help you overcome challenges, rewire unhelpful patterns, and build a more empowered, fulfilling life. Whether you're working through trauma, low mood and/or anxiety, relationship blocks, or productivity struggles, you'll gain the tools to create lasting change.
-          </p>
-          <button className="bg-primary hover-primary text-white px-8 py-3 rounded-4xl text-lg font-semibold transition-colors duration-200">
+          </p>          
+          <button className="bg-primary hover-primary text-white px-6 py-2 md:px-8 md:py-3 rounded-4xl text-base md:text-lg font-semibold transition-colors duration-200">
             EXPLORE COURSES
           </button>
         </div>
 
         
-            </main>
-
-            {/* Feature Section */}
-      <section className="w-full py-12 bg-white">
-        <div className="container px-4 md:px-6 max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            </main>            {/* Feature Section */}
+      <section className="w-full py-16 bg-white">
+        <div className="container px-4 md:px-6 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
             {/* Box 1 */}
-            <div className="p-8 border border-gray-200 rounded-md">
-              <h3 className="font-bold text-lg mb-4 uppercase">Complete Transformation</h3>
-              <p className="text-black/80">
+            <div className="p-10 border border-gray-300 rounded-2xl bg-white shadow-sm">
+              <h3 className="font-extrabold text-xl mb-6 uppercase text-black">Complete Transformation</h3>
+              <p className="text-gray-700 leading-relaxed text-base">
                 Access comprehensive modules covering both trauma healing and relationship patterns, designed to address core emotional blocks and create lasting change in your life.
               </p>
             </div>
             
             {/* Box 2 */}
-            <div className="p-8 border border-gray-200 rounded-md">
-              <h3 className="font-bold text-lg mb-4 uppercase">Evidence-Based Approach</h3>
-              <p className="text-black/80">
+            <div className="p-10 border border-gray-300 rounded-2xl bg-white shadow-sm">
+              <h3 className="font-extrabold text-xl mb-6 uppercase text-black">Evidence-Based Approach</h3>
+              <p className="text-gray-700 leading-relaxed text-base">
                 Grounded in clinical psychology, neuroscience, and attachment theory, offering practical tools that blend modern therapy with accessible, everyday applications.
               </p>
             </div>
             
             {/* Box 3 */}
-            <div className="p-8 border border-gray-200 rounded-md">
-              <h3 className="font-bold text-lg mb-4 uppercase">Powerful Exercises</h3>
-              <p className="text-black/80">
+            <div className="p-10 border border-gray-300 rounded-2xl bg-white shadow-sm">
+              <h3 className="font-extrabold text-xl mb-6 uppercase text-black">Powerful Exercises</h3>
+              <p className="text-gray-700 leading-relaxed text-base">
                 Discover your authentic self through targeted exercises that release limiting beliefs, heal old wounds, and help you create the life and relationships you truly desire.
               </p>
             </div>
           </div>
         </div>
-
-      </section>        {/* You Will Overcome Section */}
+      </section>{/* You Will Overcome Section */}
       <section className="w-full py-16 bg-cream">
         <div className="container px-4 md:px-6 max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">            {/* Video */}
@@ -370,7 +362,7 @@ const Home = () => {
                 </li>
                 <li className="flex items-start">
                   <div className="mr-2 mt-1">•</div>
-                  <span>Techniques to break free from people-pleasing behaviors</span>
+                  <span>Techniques to break free from people-pleasing behfaviors</span>
                 </li>
                 <li className="flex items-start">
                   <div className="mr-2 mt-1">•</div>
@@ -410,129 +402,95 @@ const Home = () => {
                   </div>
                 </div>
               ))}
+            </div>          {/* Course Pricing Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+              {/* Unburdening Trauma Course Card */}
+            <div className="bg-white border-2 border-gray-300 rounded-3xl p-8 text-center shadow-sm hover:shadow-md transition-shadow">
+              {/* Crossed out price */}
+              <div className="text-lg text-gray-500 line-through mb-2">£120</div>
+              
+              {/* Actual price */}
+              <div className="text-4xl font-bold text-black mb-6">£75</div>
+              
+              {/* Course type */}
+              <div className="text-lg font-semibold text-black mb-6">Unburdening Trauma</div>
+              
+              {/* Description */}
+              <div className="text-gray-700 mb-8 leading-relaxed h-20 overflow-hidden">
+                <div className="line-clamp-3">
+                  A 6-week self-paced programme designed to help you release trauma patterns, heal emotional wounds, and create lasting transformation...
+                </div>
+              </div>
+              
+              {/* Button */}
+              <button
+                onClick={() => window.location.href = "/checkout/1"}
+                className="w-full bg-primary text-white py-4 px-6 rounded-full text-lg font-medium hover:bg-gray-800 transition-colors"
+              >
+                BUY THIS COURSE
+              </button>
             </div>
 
-          {/* Unburdening Trauma Course */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="bg-cream overflow-hidden group">
-              <div className="aspect-[4/3] relative overflow-hidden">
-                <img 
-                  src="1.png" 
-                  alt="Unburdening Trauma Course" 
-                  className="object-contain w-full h-full transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <div className="p-10">
-                <h3 className="text-2xl font-serif mb-4 text-black group-hover:text-[#bd6334] transition-colors uppercase">
-                  Unburdening Trauma
-                </h3>
-                <p className="text-black/90 mb-6 text-lg">
-                  A 6-Week Self-Paced Programme
-                </p>
-                <div className="flex items-center mb-6">
-                  <span className="text-3xl font-serif text-black font-light">£75</span>
-                </div>
-                <button
-                  onClick={() => window.location.href = "/checkout/1"}
-                  className="flex w-full bg-primary hover:bg-primary text-white px-6 py-6 rounded-none text-lg tracking-wider group-hover:bg-[#a65525]"
-                >
-                  BUY THIS COURSE
-                  <svg className="pt-1.5 ml-2 h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-                <div className="mt-4 flex flex-col space-y-2">
-                  <a href="/course/1">
-                    <div className="text-primary hover:text-primary font-medium uppercase text-sm tracking-wider text-center">
-                      Learn More
-                    </div>
-                  </a>
-                  <button 
-                    onClick={() => handleStartCourse(1)}
-                    className="bg-primary text-white py-2 px-4 text-center text-sm font-medium hover:bg-[#a65525] cursor-pointer"
-                  >
-                    Start Course
-                  </button>
+            {/* Unburdening Love Course Card */}
+            <div className="bg-white border-2 border-gray-300 rounded-3xl p-8 text-center shadow-sm hover:shadow-md transition-shadow">
+              {/* Crossed out price */}
+              <div className="text-lg text-gray-500 line-through mb-2">£120</div>
+              
+              {/* Actual price */}
+              <div className="text-4xl font-bold text-black mb-6">£75</div>
+              
+              {/* Course type */}
+              <div className="text-lg font-semibold text-black mb-6">Unburdening Love</div>
+              
+              {/* Description */}
+              <div className="text-gray-700 mb-8 leading-relaxed h-20 overflow-hidden">
+                <div className="line-clamp-3">
+                  A 6-week self-paced programme focused on healing relationship patterns, breaking cycles of codependency, and creating healthy connections...
                 </div>
               </div>
+              
+              {/* Button */}
+              <button
+                onClick={() => window.location.href = "/checkout/2"}
+                className="w-full bg-primary text-white py-4 px-6 rounded-full text-lg font-medium hover:bg-gray-800 transition-colors"
+              >
+                BUY THIS COURSE
+              </button>
             </div>
 
-            {/* Unburdening Love Course */}
-            <div className="bg-cream overflow-hidden group">
-              <div className="aspect-[4/3] relative overflow-hidden">
-                <img 
-                  src="love_course.png" 
-                  alt="Unburdening Love Course" 
-                  className="object-contain w-full h-full transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <div className="p-10">
-                <h3 className="text-2xl font-serif mb-4 text-black group-hover:text-primary transition-colors uppercase">
-                  Unburdening Love
-                </h3>
-                <p className="text-black/90 mb-6 text-lg">
-                  A 6-Week Self-Paced Programme
-                </p>
-                <div className="flex items-center mb-6">
-                  <span className="text-3xl font-serif text-black font-light">£75</span>
-                </div>
-                <button
-                  onClick={() => window.location.href = "/checkout/2"}
-                  className="flex w-full bg-primary hover:bg-primary text-white px-6 py-6 rounded-none text-lg tracking-wider group-hover:bg-[#a65525]"
-                >
-                  BUY THIS COURSE
-                  <svg className="pt-1.5 ml-2 h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-                
-                <div className="mt-4 text-center">
-                  <a href="/course/2">
-                    <div className="text-primary hover:text-primary font-medium uppercase text-sm tracking-wider">
-                      Learn More
-                    </div>
-                  </a>
-                  <button 
-                    onClick={() => handleStartCourse(2)}
-                    className="bg-primary text-white py-2 px-4 text-center text-sm font-medium hover:bg-[#a65525] cursor-pointer"
-                  >
-                    Start Course
-                  </button>
+            {/* Bundle Offer Card */}
+            <div className="bg-white border-2 border-gray-300 rounded-3xl p-8 text-center shadow-sm hover:shadow-md transition-shadow">
+              {/* Crossed out price */}
+              <div className="text-lg text-gray-500 line-through mb-2">£240</div>
+              
+              {/* Actual price */}
+              <div className="text-4xl font-bold text-black mb-6">£120</div>
+              
+              {/* Course type */}
+              <div className="text-lg font-semibold text-black mb-6">Complete Bundle</div>
+              
+              {/* Description */}
+              <div className="text-gray-700 mb-8 leading-relaxed h-20 overflow-hidden">
+                <div className="line-clamp-3">
+                  Get both transformative courses together and save £120. Complete access to trauma healing and relationship transformation programs...
                 </div>
               </div>
+              
+              {/* Button */}
+              <button
+                onClick={() => window.location.href = "/bundle"}
+                className="w-full bg-primary text-white py-4 px-6 rounded-full text-lg font-medium hover:bg-gray-800 transition-colors"
+              >
+                BUY THIS COURSE
+              </button>
             </div>
 
           </div>
-
-          {/* Bundle Offer */}
-                <div className="mt-20 py-16 px-12 bg-[#bd6334]/10 border border-[#bd6334]/30 text-center">
-                <h3 className="text-3xl font-serif mb-6 text-black uppercase">Bundle Both Courses & Save 20%</h3>
-                <div className="flex justify-center items-center mb-6">
-                  <div className="text-4xl font-serif font-light text-black">£120</div>
-                  <div className="ml-3 text-lg line-through text-gray-500">£150</div>
-                  <div className="ml-3 bg-primary text-white font-medium px-3 py-1 text-sm">SAVE £30</div>
-                </div>
-                <p className="mb-10 text-lg max-w-xl mx-auto text-black/80">
-                  Get lifetime access to both transformative courses and save £30
-                </p>
-                <div className="flex justify-center">
-                  <button
-                  onClick={() => window.location.href = "/bundle"}
-                  className="bg-[#bd6334] hover:bg-[#a65525] text-white px-12 py-6 rounded-none text-lg tracking-wider flex items-center justify-center"
-                  >
-                  GET BOTH COURSES
-                  <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                  </svg>
-                  </button>
-                </div>                </div>
               </div> 
-              </section>
-
-      {/* Reviews Section */}
-      <section className="py-20 bg-cream">
+              </section>      {/* Reviews Section */}
+      <section className="py-24 bg-cream">
         <div className="max-w-7xl mx-auto px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-20">
             <h2 className="text-4xl font-serif font-light mb-6 text-black leading-tight tracking-tight">
               Let The Reviews Speak For Themselves...
             </h2>
@@ -542,13 +500,13 @@ const Home = () => {
           <div className="relative">
             <div 
               ref={reviewsRef}
-              className="flex gap-6 overflow-x-hidden scroll-smooth pb-4"
+              className="flex gap-8 overflow-x-hidden scroll-smooth pb-4"
             >              {reviews.map((review) => (
-                <div key={review.id} className="flex-none w-80 h-64 bg-white p-6 rounded-lg shadow-sm flex flex-col">
+                <div key={review.id} className="flex-none w-96 h-96 bg-white p-8 rounded-2xl shadow-lg flex flex-col">
                   {/* Stars */}
-                  <div className="flex justify-center mb-4">
+                  <div className="flex justify-center mb-6">
                     {[...Array(review.rating)].map((_, i) => (
-                      <svg key={i} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                      <svg key={i} className="w-5 h-5 text-yellow-400 fill-current mx-0.5" viewBox="0 0 24 24">
                         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                       </svg>
                     ))}
@@ -556,7 +514,7 @@ const Home = () => {
                   
                   {/* Review Text - Scrollable */}
                   <div className="flex-1 overflow-y-auto">
-                    <p className="text-gray-800 text-center leading-relaxed text-sm">
+                    <p className="text-gray-800 text-center leading-relaxed text-base">
                       "{review.text}"
                     </p>
                   </div>
@@ -565,10 +523,10 @@ const Home = () => {
             </div>
 
             {/* Navigation Arrows */}
-            <div className="flex justify-center mt-8 gap-4">
+            <div className="flex justify-center mt-12 gap-6">
               <button
                 onClick={prevReview}
-                className="p-3 bg-white rounded-full shadow-md hover:shadow-lg transition-shadow duration-200 group"
+                className="p-4 bg-white rounded-full shadow-lg hover:shadow-xl transition-shadow duration-200 group"
               >
                 <svg className="w-6 h-6 text-gray-600 group-hover:text-primary transition-colors" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -577,14 +535,15 @@ const Home = () => {
               
               <button
                 onClick={nextReview}
-                className="p-3 bg-white rounded-full shadow-md hover:shadow-lg transition-shadow duration-200 group"
+                className="p-4 bg-white rounded-full shadow-lg hover:shadow-xl transition-shadow duration-200 group"
               >
                 <svg className="w-6 h-6 text-gray-600 group-hover:text-primary transition-colors" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
               </button>
             </div>
-          </div>        </div>
+          </div>
+        </div>
       </section>
 
       {/* FAQ Section */}
