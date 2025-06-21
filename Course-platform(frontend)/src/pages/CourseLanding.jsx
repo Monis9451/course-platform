@@ -306,7 +306,7 @@
 // 			</section>
 
 // 			{/* Why This Course Section */}
-// 			{/* <section className="py-16 bg-white">
+// 			<section className="py-16 bg-white">
 // 				<div className="container mx-auto px-4 lg:px-8">
 // 					<div className="max-w-4xl mx-auto">
 // 						<h2 className="text-2xl md:text-3xl font-medium mb-12 text-center text-primary font-serif uppercase">
@@ -358,10 +358,10 @@
 // 						</div>
 // 					</div>
 // 				</div>
-// 			</section> */}
+// 			</section>
 
 // 			{/* Why This Course Section */}
-// 			{/* <section className="py-16 bg-white">
+// 			 <section className="py-16 bg-white">
 // 				<div className="container mx-auto px-4 lg:px-8">
 // 					<div className="max-w-4xl mx-auto">
 // 						<h2 className="text-2xl md:text-3xl font-medium mb-12 text-center text-primary font-serif uppercase">
@@ -413,7 +413,7 @@
 // 						</div>
 // 					</div>
 // 				</div>
-// 			</section> */}
+// 			</section>
 
 // 			{/* Testimonials Section */}
 // 			<section className="py-16 bg-white">

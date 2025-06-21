@@ -68,7 +68,7 @@ const Footer = () => {
                 <li><a href="/support" className="hover:text-white transition-colors">Help Center</a></li>
                 <li><a href="/about" className="hover:text-white transition-colors">About The Mind Planner</a></li>
                 <li><a href="/support" className="hover:text-white transition-colors">Support & FAQ</a></li>
-                <li><a href="/contact" className="hover:text-white transition-colors">Contact Us</a></li>
+                <li><a href="/support" className="hover:text-white transition-colors">Contact Us</a></li>
               </ul>
             </div>
 
@@ -92,7 +92,7 @@ const Footer = () => {
             <a href="/terms" className="hover:text-white transition-colors">TERMS & CONDITIONS</a>
             <a href="/privacy-statement" className="hover:text-white transition-colors">PRIVACY STATEMENTS</a>
             <a href="/disclaimer" className="hover:text-white transition-colors">DISCLAIMER</a>
-            <a href="/contact-us" className="hover:text-white transition-colors">CONTACT US</a>
+            <a href="/support" className="hover:text-white transition-colors">CONTACT US</a>
           </div>
 
           {/* Copyright */}

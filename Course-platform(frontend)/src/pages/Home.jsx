@@ -160,7 +160,7 @@ const Home = () => {
       id: 4,
       title: "Unlocked Power Journal",
       description: "Mindmaster series",
-      img_src: "/themindplanner primary.png",
+      img_src: "/themindplanner-primary.png",
       img_alt: "Unlocked Power Journal",
       category: "JOURNAL"
     },
@@ -168,7 +168,7 @@ const Home = () => {
       id: 5,
       title: "Power Bundle",
       description: "Complete package",
-      img_src: "/themindplanner primary.png",
+      img_src: "/themindplanner-primary.png",
       img_alt: "Power Bundle",
       category: "BUNDLE"    },
     {
@@ -500,7 +500,7 @@ const Home = () => {
           <div className="relative">
             <div 
               ref={reviewsRef}
-              className="flex gap-8 overflow-x-hidden scroll-smooth pb-4"
+              className="flex gap-8 overflow-x-hidden scroll-smooth pb-4  "
             >              {reviews.map((review) => (
                 <div key={review.id} className="flex-none w-96 h-96 bg-white p-8 rounded-2xl shadow-lg flex flex-col">
                   {/* Stars */}

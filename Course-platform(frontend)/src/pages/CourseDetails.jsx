@@ -143,10 +143,10 @@ const dummyCoursesData = {
   },
   2: {
     id: 2,
-    title: "Understanding Love",
-    subtitle: "A 6-Week Self-Paced Course",
-    description: "A comprehensive guide to building authentic relationships, understanding attachment styles, and creating healthy relationship patterns.",
-    fullDescription: "Exploring the Psychology of Love, Attachment Styles, and Building Secure Relationships",
+    title: "Unburdening Love",
+    subtitle: " A 6-Week Self-Paced Course",
+    description: "Break Free from Relationship Blocks and Cultivate Healthy Love ",
+    fullDescription: "Are you ready to break free from the emotional blocks holding you back in love? Whether you're single, in a relationship, or navigating a marriage, this 6-week self-paced course will help you release deep-seated barriers, heal past wounds, and cultivate healthy, lasting love. Led by an experienced psychologist, Unburdening Love is a transformative programme designed to help you uncover the roots of your relationship struggles and provide you with the tools to create healthier, more fulfilling connections with yourself and others.",
     instructor: "Dr. Samina Khatun",
     duration: "6 weeks",
     lessons: 20,
@@ -154,53 +154,171 @@ const dummyCoursesData = {
     price: 75,
     featured: true,
     img_src: "/love_course.png",
-    img_alt: "Understanding Love Course",
-    modules: [
+    img_alt: "Understanding Love Course",    modules: [
       {
-        id: 3,
-        title: "Understanding Love – The Psychology of Relationships",
-        description: "Exploring the Psychology of Love, Attachment Styles, and Building Secure Relationships",
+        id: 1,
+        title: "Healing the Roots of Attachment",
+        description: "Explore how early experiences shape your approach to love and relationships.",
         lessons: [
           {
-            id: 6,
-            title: "The Science of Love and Attachment",
-            description: "Understand the biological and psychological foundations of love and connection.",
-            duration: "20 minutes",
+            id: 1,
+            title: "Understanding Attachment Theory",
+            description: "Learn the four attachment styles and discover which one shapes your relationships.",
+            duration: "22 minutes",
             completed: false
           },
           {
-            id: 7,
-            title: "Attachment Styles and Their Impact",
-            description: "Discover your attachment style and how it influences your relationships.",
+            id: 2,
+            title: "Childhood Origins of Love Patterns",
+            description: "Explore how your early caregiving experiences created your blueprint for love.",
             duration: "25 minutes",
             completed: false
           },
           {
+            id: 3,
+            title: "Identifying Your Attachment Style",
+            description: "Take a deep dive into your personal attachment patterns and behaviors.",
+            duration: "20 minutes",
+            completed: false
+          }
+        ]
+      },
+      {
+        id: 2,
+        title: "The Hidden Wounds of Love",
+        description: "Uncover emotional baggage and limiting beliefs that may be holding you back.",
+        lessons: [
+          {
+            id: 4,
+            title: "Recognizing Emotional Baggage",
+            description: "Identify the unconscious beliefs and fears that sabotage your relationships.",
+            duration: "23 minutes",
+            completed: false
+          },
+          {
+            id: 5,
+            title: "Core Wounds and Love Blocks",
+            description: "Understand the deeper wounds that create barriers to intimacy and connection.",
+            duration: "27 minutes",
+            completed: false
+          },
+          {
+            id: 6,
+            title: "Breaking Free from Limiting Beliefs",
+            description: "Learn powerful techniques to release beliefs that no longer serve your love life.",
+            duration: "24 minutes",
+            completed: false
+          }
+        ]
+      },
+      {
+        id: 3,
+        title: "Understanding Triggers & Nervous System Responses",
+        description: "Learn how past wounds affect your emotional reactions and how to regulate them.",
+        lessons: [
+          {
+            id: 7,
+            title: "The Science of Emotional Triggers",
+            description: "Understand what happens in your brain and body when you get triggered in relationships.",
+            duration: "21 minutes",
+            completed: false
+          },
+          {
             id: 8,
-            title: "Building Secure Relationships",
-            description: "Practical strategies for creating healthy, authentic connections.",
-            duration: "18 minutes",
+            title: "Nervous System Regulation Techniques",
+            description: "Master practical tools to calm your nervous system during relationship stress.",
+            duration: "26 minutes",
+            completed: false
+          },
+          {
+            id: 9,
+            title: "Creating New Response Patterns",
+            description: "Learn to respond rather than react when triggered by your partner.",
+            duration: "23 minutes",
             completed: false
           }
         ]
       },
       {
         id: 4,
-        title: "Communication and Intimacy",
-        description: "Master the art of effective communication and building deeper intimacy in relationships.",
+        title: "Honouring Your Needs",
+        description: "Reclaim your voice, set boundaries, and create emotional safety in relationships.",
         lessons: [
           {
-            id: 9,
-            title: "Effective Communication Strategies",
-            description: "Learn proven techniques for healthy relationship communication.",
+            id: 10,
+            title: "Identifying Your Core Needs",
+            description: "Discover what you truly need to feel loved, valued, and secure in relationships.",
             duration: "22 minutes",
             completed: false
           },
           {
-            id: 10,
-            title: "Building Emotional Intimacy",
-            description: "Discover how to create and maintain emotional closeness with your partner.",
-            duration: "19 minutes",
+            id: 11,
+            title: "The Art of Healthy Boundaries",
+            description: "Learn to set and maintain boundaries that protect your energy and well-being.",
+            duration: "25 minutes",
+            completed: false
+          },
+          {
+            id: 12,
+            title: "Communicating Your Needs with Confidence",
+            description: "Master the skills to express your needs clearly and compassionately.",
+            duration: "24 minutes",
+            completed: false
+          }
+        ]
+      },
+      {
+        id: 5,
+        title: "Rewriting the Love Story",
+        description: "Shift relationship patterns and choose love from a place of self-worth and wholeness.",
+        lessons: [
+          {
+            id: 13,
+            title: "Cultivating Self-Love and Worth",
+            description: "Build a foundation of self-love that attracts healthy, fulfilling relationships.",
+            duration: "26 minutes",
+            completed: false
+          },
+          {
+            id: 14,
+            title: "Breaking Toxic Relationship Cycles",
+            description: "Identify and break free from destructive patterns that keep you stuck.",
+            duration: "28 minutes",
+            completed: false
+          },
+          {
+            id: 15,
+            title: "Creating Your New Love Blueprint",
+            description: "Design a new vision for love based on wholeness rather than neediness.",
+            duration: "25 minutes",
+            completed: false
+          }
+        ]
+      },
+      {
+        id: 6,
+        title: "Integrating Healing into Life",
+        description: "Anchor your healing and sustain healthy love in your everyday interactions.",
+        lessons: [
+          {
+            id: 16,
+            title: "Daily Practices for Healthy Love",
+            description: "Establish routines and habits that support your ongoing relationship growth.",
+            duration: "22 minutes",
+            completed: false
+          },
+          {
+            id: 17,
+            title: "Maintaining Your Progress",
+            description: "Learn strategies to sustain your healing and prevent old patterns from returning.",
+            duration: "24 minutes",
+            completed: false
+          },
+          {
+            id: 18,
+            title: "Creating Lasting Change",
+            description: "Integrate all your learnings into a sustainable approach to love and relationships.",
+            duration: "27 minutes",
             completed: false
           }
         ]
@@ -215,6 +333,44 @@ const CourseDetails = () => {
   const [course, setCourse] = useState(null)
   const [loading, setLoading] = useState(true)
   const [userProgress] = useState([]) // Mock user progress
+  const [openFaqId, setOpenFaqId] = useState(null)
+
+  const toggleFaq = (faqId) => {
+    setOpenFaqId(openFaqId === faqId ? null : faqId)
+  }
+
+  const faqs = [
+    {
+      id: 1,
+      question: "Is there a refund policy for this course?",
+      answer: "Due to the nature of the course, refunds are not available. Once you purchase, you'll have immediate access to all the course materials. We believe in the transformative power of this programme, and we're confident that if you commit to the process, you'll see lasting results.",
+      icon: "💰"
+    },
+    {
+      id: 2,
+      question: "Do I need to be in therapy to do this course?",
+      answer: "No, you do not need to be in therapy to take this course. It's designed for anyone looking to improve their relationships and heal emotional blocks, whether or not you're in therapy. If you're currently seeing a therapist, this course can be a great complement to that work.",
+      icon: "🧠"
+    },
+    {
+      id: 3,
+      question: "Is this course for singles, people in relationships, or married couples?",
+      answer: "Yes! Whether you're single, dating, or in a committed relationship, this course is designed to help you release emotional blocks that affect how you connect with yourself and others. It's valuable for anyone looking to create stronger, healthier relationships.",
+      icon: "💕"
+    },
+    {
+      id: 4,
+      question: "How long do I have access to the course?",
+      answer: "You get lifetime access to all course materials, so you can work through the modules at your own pace whenever it fits your schedule.",
+      icon: "⏰"
+    },
+    {
+      id: 5,
+      question: "Is there support throughout the programme?",
+      answer: "Yes! You'll have access to me via email to ask any programme-related questions, seek clarification, or get additional support as you work through the material. Please note that I am available for programme-related inquiries only. For any personal therapeutic needs or general psychological support, I recommend reaching out to a licensed therapist.",
+      icon: "💬"
+    }
+  ]
 
   useEffect(() => {
     // Simulate API call - replace with actual API when database is ready
@@ -379,12 +535,10 @@ const CourseDetails = () => {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Course Curriculum */}
+      </section>      {/* Course Curriculum */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-serif text-black mb-12">Course Curriculum</h2>
+          <h2 className="text-3xl font-serif text-black mb-12">Course Breakdown</h2>
           
           <div className="space-y-8">
             {course.modules.map((module, moduleIndex) => (
@@ -398,7 +552,174 @@ const CourseDetails = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section>      {/* Why This Course Section */}
+			<section className="py-16 bg-white">
+				<div className="container mx-auto px-4 lg:px-8">
+					<div className="max-w-4xl mx-auto">
+						<h2 className="text-2xl md:text-3xl font-medium mb-6 text-center text-primary font-serif uppercase">
+							Why This Course?
+						</h2>
+						<h3 className="text-xl font-medium mb-12 text-center text-black font-serif">
+							Why "Unburdening Love" Is Different:
+						</h3>
+
+						<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+							<div className="bg-cream p-6 rounded-lg shadow-sm">
+								<h3 className="font-medium text-lg mb-4 text-black">
+									Expert-Led
+								</h3>
+								<p className="text-warm-gray">
+									Designed by a licensed psychologist with years of
+									experience in relationship therapy, this course combines science-backed methods
+									for deep healing.
+								</p>
+							</div>
+
+							<div className="bg-cream p-6 rounded-lg shadow-sm">
+								<h3 className="font-medium text-lg mb-4 text-black">
+									Affordable
+								</h3>
+								<p className="text-warm-gray">
+									High-quality, transformative material without the hefty
+									price tag of therapy or one-on-one coaching.
+								</p>
+							</div>
+
+							<div className="bg-cream p-6 rounded-lg shadow-sm">
+								<h3 className="font-medium text-lg mb-4 text-black">
+									Self-Paced
+								</h3>
+								<p className="text-warm-gray">
+									Complete the modules at your own pace with lifetime
+									access to all materials, so you can return to them
+									whenever you need.
+								</p>
+							</div>
+
+							<div className="bg-cream p-6 rounded-lg shadow-sm">
+								<h3 className="font-medium text-lg mb-4 text-black">
+									Personal Support
+								</h3>
+								<p className="text-warm-gray">
+									Have your questions answered and get the support you
+									need via email throughout the course.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>			{/* Testimonials Section */}
+			<section className="py-16 bg-white">
+				<div className="container mx-auto px-4 lg:px-8">
+					<div className="max-w-4xl mx-auto">
+						<h2 className="text-2xl md:text-3xl font-medium mb-6 text-center font-serif uppercase">
+							Testimonials
+						</h2>
+						<h3 className="text-xl font-medium mb-12 text-center text-black font-serif">
+							Real Stories from Real Students
+						</h3>
+
+						<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+							<div className="bg-white p-6 rounded-lg shadow-sm">
+								<p className="text-warm-gray mb-6 italic">
+									"I had no idea how much I was carrying from my childhood
+									and past relationships. This course helped me see it and,
+									more importantly, let it go."
+								</p>
+								<p className="font-medium text-black">— Sarah M.</p>
+							</div>
+
+							<div className="bg-white p-6 rounded-lg shadow-sm">
+								<p className="text-warm-gray mb-6 italic">
+									"The exercises helped me realize my own attachment style and how it was affecting my
+									relationship. I'm now communicating better and feeling more secure in love."
+								</p>
+								<p className="font-medium text-black">— James L.</p>
+							</div>
+						</div>						{/* Get Instant Access Section */}
+						<div className="text-center bg-cream p-8 rounded-lg">
+							<h3 className="text-2xl font-medium mb-4 text-black font-serif">
+								Get Instant Access for Just £75
+							</h3>
+							<p className="text-warm-gray text-lg leading-relaxed">
+								This course is designed to give you lifetime access to transformative materials at an
+								affordable price. Whether you're looking to heal from past wounds, improve your
+								current relationship, or build a foundation of self-love, this course will guide you every
+								step of the way.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			{/* FAQ Section */}
+			<section className="py-16 bg-white">
+				<div className="max-w-4xl mx-auto px-8">
+					<div className="text-center mb-12">
+						<h2 className="text-2xl md:text-3xl font-medium mb-8 text-center font-serif uppercase">
+							FAQ
+						</h2>
+						<div className="w-full h-px bg-gray-300"></div>
+					</div>
+
+					<div className="space-y-2">
+						{faqs.map((faq) => (
+							<div key={faq.id} className="border-b border-gray-200">
+								<button
+									onClick={() => toggleFaq(faq.id)}
+									className="w-full py-6 flex items-center justify-between text-left hover:bg-gray-50 transition-colors duration-200"
+								>
+									<div className="flex items-center">
+										<span className="text-lg mr-3">{faq.icon}</span>
+										<span className="text-gray-800 font-medium">{faq.question}</span>
+									</div>
+									<svg
+										className={`w-5 h-5 text-gray-500 transform transition-transform duration-200 ${
+											openFaqId === faq.id ? 'rotate-180' : ''
+										}`}
+										fill="none"
+										stroke="currentColor"
+										strokeWidth={2}
+										viewBox="0 0 24 24"
+									>
+										<path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+									</svg>
+								</button>
+								
+								<div
+									className={`overflow-hidden transition-all duration-300 ease-in-out ${
+										openFaqId === faq.id ? 'max-h-96 pb-6' : 'max-h-0'
+									}`}
+								>
+									<div className="px-8">
+										<p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+									</div>
+								</div>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+
+			{/* Final CTA Section */}
+			<section className="py-16 bg-cream">
+				<div className="container mx-auto px-4 lg:px-8">
+					<div className="max-w-3xl mx-auto text-center">
+						<h2 className="text-2xl md:text-3xl font-medium mb-10 font-serif">
+							Ready to Start Your Transformation?
+						</h2>
+						<button
+							onClick={() => (window.location.href = `/checkout/${course.id}`)}
+							className="bg-primary hover:bg-gray-100 text-white font-medium px-12 py-4 uppercase text-lg transition-colors duration-200"
+						>
+							Enroll Now for £{course.price}
+						</button>
+						<a href="/courses" className="block mt-6 text-primary hover:underline">
+							Or view all our corses
+						</a>
+					</div>
+				</div>
+			</section>
 
     </div>
   )
