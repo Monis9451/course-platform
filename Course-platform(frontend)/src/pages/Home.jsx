@@ -147,52 +147,6 @@ const Home = () => {
       img_src: "/love_course.png",
       img_alt: "Understanding Love Course",
       category: "BUNDLE"
-    },
-    {
-      id: 3,
-      title: "Course Bundle",
-      description: "Complete transformation",
-      img_src: "/1.png",
-      img_alt: "Course Bundle",
-      category: "BUNDLE"
-    },
-    {
-      id: 4,
-      title: "Unlocked Power Journal",
-      description: "Mindmaster series",
-      img_src: "/themindplanner-primary.png",
-      img_alt: "Unlocked Power Journal",
-      category: "JOURNAL"
-    },
-    {
-      id: 5,
-      title: "Power Bundle",
-      description: "Complete package",
-      img_src: "/themindplanner-primary.png",
-      img_alt: "Power Bundle",
-      category: "BUNDLE"    },
-    {
-      id: 6,
-      title: "Healing Your Inner Self",
-      description: "Transform from within",
-      img_src: "/1.png",
-      img_alt: "Healing Your Inner Self Course",
-      category: "BUNDLE"
-    },
-    {
-      id: 7,
-      title: "Building Healthy Relationships",
-      description: "Create lasting connections",
-      img_src: "/love_course.png",
-      img_alt: "Building Healthy Relationships Course",
-      category: "BUNDLE"
-    },
-    {
-      id: 8,
-      title: "Complete Wellness Pack",
-      description: "Mind and body harmony",
-      img_src: "/1.png",      img_alt: "Complete Wellness Pack",
-      category: "BUNDLE"
     }
   ];
 

@@ -1,192 +1,92 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { FiUser, FiSearch, FiShoppingCart, FiMenu, FiX } from 'react-icons/fi'
 
-const Header = () => {    const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
-    const [mobileActiveDropdown, setMobileActiveDropdown] = React.useState(null)
-
-    const navigationItems = [
-      { name: 'Unburdening Trauma', path: '/course/1' },
-      { name: 'Unburdening Love', path: '/course/2' },
-      { name: 'All Courses', path: '/courses' },
-      { name: 'Help Center', path: '/support' },
-      { name: 'Our Story', path: '/about' },
-      { name: 'Blogs', path: '/blogs' },
-      { name: 'About The Mind Planner', path: '/about' }
-    ]
-
-    const dropdownData = {
-      courses: [
-        { name: 'Unburdening Trauma', path: '/course/1' },
-        { name: 'Unburdening Love', path: '/course/2' },
-        { name: 'All Courses', path: '/courses' }
-      ],
-      support: [
-        { name: 'Help Center', path: '/support' }
-      ],      
-      about: [
-        { name: 'Our Story', path: '/about' },
-        { name: 'About The Mind Planner', path: '/about' },
-        { name: 'Blogs', path: '/blogs' }
-      ]
-    }
-
-    const handleMobileDropdownToggle = (dropdown) => {
-      setMobileActiveDropdown(mobileActiveDropdown === dropdown ? null : dropdown)
-    }
-
+const Header = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
+  const navigationItems = [
+    { name: 'Home', path: '/' },
+    { name: 'Login', path: '/login' },
+    { name: 'All Courses', path: '/courses' },
+    { name: 'Unburdening Trauma', path: '/course/1' },
+    { name: 'Unburdening Love', path: '/course/2' },
+    { name: 'About The Mind Planner', path: '/about' },
+    { name: 'Blogs', path: '/blogs' },
+    { name: 'Help Center', path: '/support' },
+  ]
+  
   return (
-    <div className="pt-24">        <nav className="bg-cream px-4 py-3 fixed top-0 w-full z-50 shadow">
-        <div className="flex items-center justify-between max-w-7xl mx-auto relative">
-          <div className="flex flex-1 items-center md:hidden">            <button
+    <div className="pt-40">
+      <nav className="bg-primary px-4 py-12 fixed top-0 w-full z-50 shadow-lg">
+        <div className="flex items-center justify-between max-w-7xl mx-auto">
+          {/* Left - Hamburger Menu */}
+          <div className="flex items-center">
+            <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-[#B45B29] focus:outline-none">
-              <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d={!isMobileMenuOpen ? "M4 6h16M4 12h16M4 18h16" : "M6 18L18 6M6 6l12 12"}
-                />
-              </svg>
-            </button>          </div>          <div className="flex-1 flex justify-center md:justify-start">
+              className="text-white hover:text-gray-200 focus:outline-none transition-colors duration-200"
+            >
+              <FiMenu className="h-6 w-6" />
+            </button>
+          </div>
+
+          {/* Center - Logo */}          <div className="absolute left-1/2 transform -translate-x-1/2">
             <Link to="/" className="flex items-center">
-              <div className="logo-container">
-                <img src="/themindplanner-primary.png" alt="mindplanner_logo" className="h-16 md:h-16 w-auto cursor-pointer hover:opacity-90 transition-opacity duration-200" />
-              </div>
-            </Link>          </div>          <div className="hidden md:flex flex-1 justify-center">
-            <div className="flex space-x-3 relative">
+              <img 
+                src="/mindplanner_new_logo.png" 
+                alt="The Mind Planner" 
+                className="h-16 md:h-20 w-auto cursor-pointer hover:opacity-90 transition-opacity duration-200" 
+              />
+            </Link>
+          </div>{/* Right - Icons */}
+          <div className="flex items-center space-x-2 md:space-x-6">
+            <button className="hidden md:block text-white hover:text-gray-200 transition-colors duration-200">
+              <FiUser className="h-5 w-5" style={{ strokeWidth: 1 }} />
+            </button>
+            <button className="text-white hover:text-gray-200 transition-colors duration-200">
+              <FiSearch className="h-5 w-5" style={{ strokeWidth: 1 }} />
+            </button>
+            <Link to="/checkout" className="text-white hover:text-gray-200 transition-colors duration-200">
+              <FiShoppingCart className="h-5 w-5" style={{ strokeWidth: 1 }} />
+            </Link>
+          </div>
+        </div>        {/* Mobile Menu Overlay */}
+        <div
+          className={`fixed inset-0 z-40 transition-opacity duration-500 ${
+            isMobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+
+        {/* Mobile Menu */}
+        <div
+          className={`fixed inset-y-0 left-0 z-50 w-80 transition-transform duration-500 ease-in-out ${
+            isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+          } bg-white shadow-2xl flex flex-col`}
+        >
+          {/* Close Button */}
+          <div className="flex justify-end p-4">
+            <button
+              className="text-[#B45B29] hover:text-[#8B3A1A] focus:outline-none transition-colors duration-200"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <FiX className="h-6 w-6" />
+            </button>
+          </div>
+
+          {/* Menu Items */}
+          <div className="flex-1 px-6 py-4">
+            <div className="space-y-1">
               {navigationItems.map((item, index) => (
                 <Link
                   key={index}
                   to={item.path}
-                  className="text-[#B45B29] hover:text-[#8B3A1A] text-sm px-2 py-1 transition-colors duration-200 whitespace-nowrap"
+                  className="block text-[#B45B29] hover:text-[#8B3A1A] text-lg py-3 border-b border-gray-200 transition-colors duration-200 font-medium"
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
             </div>
-          </div><div className="flex-1 flex justify-end">
-            <Link to="/login" className="text-[#B45B29] hover:text-[#8B3A1A] text-xs md:text-base mr-2 md:mr-1 transition-colors duration-200 border-2 border-[#B45B29] rounded-full px-3 py-1 md:px-6 md:py-1.5">
-              Log In
-            </Link>
-          </div>
-        </div>        <div
-          className={`fixed inset-y-0 left-0 z-40 w-64 transition-transform duration-500 ${
-            isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-          } bg-primary shadow-lg flex flex-col p-6 md:hidden overflow-y-auto`}
-          style={{ pointerEvents: isMobileMenuOpen ? "auto" : "none" }}
-        >
-          <button
-            className="absolute top-4 right-4 text-white z-50"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>          
-          {/* Add some top padding to avoid collision with close button */}
-          <div className="pt-12 space-y-4">
-            {/* Courses Mobile Dropdown */}
-          <div>
-            <button 
-              onClick={() => handleMobileDropdownToggle('courses')}
-              className="text-white hover:text-orange-200 text-xl text-left w-full flex items-center justify-between py-2 transition-colors duration-300"
-            >
-              <span>Courses</span>
-              <svg 
-                className={`w-5 h-5 transition-transform duration-300 ease-in-out ${mobileActiveDropdown === 'courses' ? 'rotate-180' : ''}`} 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <div className={`overflow-hidden transition-all duration-300 ease-in-out ${mobileActiveDropdown === 'courses' ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-              <div className="ml-4 mt-2 space-y-2">
-                {dropdownData.courses.map((item, index) => (
-                  <Link
-                    key={index}
-                    to={item.path}
-                    className="block text-orange-200 hover:text-white text-lg py-1 transition-colors duration-200 transform hover:translate-x-1"
-                    onClick={() => {
-                      setMobileActiveDropdown(null)
-                      setIsMobileMenuOpen(false)
-                    }}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>          {/* Support Mobile Dropdown */}
-          <div>
-            <button 
-              onClick={() => handleMobileDropdownToggle('support')}
-              className="text-white hover:text-orange-200 text-xl text-left w-full flex items-center justify-between py-2 transition-colors duration-300"
-            >
-              <span>Support</span>
-              <svg 
-                className={`w-5 h-5 transition-transform duration-300 ease-in-out ${mobileActiveDropdown === 'support' ? 'rotate-180' : ''}`} 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <div className={`overflow-hidden transition-all duration-300 ease-in-out ${mobileActiveDropdown === 'support' ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-              <div className="ml-4 mt-2 space-y-2">
-                {dropdownData.support.map((item, index) => (
-                  <Link
-                    key={index}
-                    to={item.path}
-                    className="block text-orange-200 hover:text-white text-lg py-1 transition-colors duration-200 transform hover:translate-x-1"
-                    onClick={() => {
-                      setMobileActiveDropdown(null)
-                      setIsMobileMenuOpen(false)
-                    }}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-            {/* About Mobile Dropdown */}
-          <div>
-            <button 
-              onClick={() => handleMobileDropdownToggle('about')}
-              className="text-white hover:text-orange-200 text-xl text-left w-full flex items-center justify-between py-2 transition-colors duration-300"
-            >
-              <span>About</span>
-              <svg 
-                className={`w-5 h-5 transition-transform duration-300 ease-in-out ${mobileActiveDropdown === 'about' ? 'rotate-180' : ''}`} 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <div className={`overflow-hidden transition-all duration-300 ease-in-out ${mobileActiveDropdown === 'about' ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-              <div className="ml-4 mt-2 space-y-2">
-                {dropdownData.about.map((item, index) => (
-                  <Link
-                    key={index}
-                    to={item.path}
-                    className="block text-orange-200 hover:text-white text-lg py-1 transition-colors duration-200 transform hover:translate-x-1"
-                    onClick={() => {
-                      setMobileActiveDropdown(null)
-                      setIsMobileMenuOpen(false)
-                    }}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
           </div>
         </div>
       </nav>
