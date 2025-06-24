@@ -1,19 +1,48 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { FiUser, FiSearch, FiShoppingCart, FiMenu, FiX } from 'react-icons/fi'
+import { Link, useNavigate } from 'react-router-dom'
+import { FiUser, FiSearch, FiShoppingCart, FiMenu, FiX, FiLogOut, FiChevronDown } from 'react-icons/fi'
+import { useAuth } from '../contexts/AuthContext'
 
 const Header = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+  const [isProfileDropdownOpen, setIsProfileDropdownOpen] = React.useState(false);
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
   const navigationItems = [
     { name: 'Home', path: '/' },
-    { name: 'Login', path: '/login' },
+    ...(user ? [] : [{ name: 'Login', path: '/login' }]), // Hide login if user is authenticated
     { name: 'All Courses', path: '/courses' },
     { name: 'Unburdening Trauma', path: '/course/1' },
     { name: 'Unburdening Love', path: '/course/2' },
     { name: 'About The Mind Planner', path: '/about' },
     { name: 'Blogs', path: '/blogs' },
     { name: 'Help Center', path: '/support' },
-  ]
+  ];
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+      setIsProfileDropdownOpen(false);
+      navigate('/');
+    } catch (error) {
+      console.error('Error logging out:', error);
+    }
+  };
+
+  // Close dropdown when clicking outside
+  React.useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest('.profile-dropdown')) {
+        setIsProfileDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
   
   return (
     <div className="pt-40">
@@ -37,15 +66,57 @@ const Header = () => {
                 className="h-16 md:h-20 w-auto cursor-pointer hover:opacity-90 transition-opacity duration-200" 
               />
             </Link>
-          </div>{/* Right - Icons */}
+          </div>          {/* Right - Icons */}
           <div className="flex items-center space-x-2 md:space-x-6">
-            <button className="hidden md:block text-white hover:text-gray-200 transition-colors duration-200">
-              <FiUser className="h-5 w-5" style={{ strokeWidth: 1 }} />
-            </button>
+            {/* User Profile */}
+            {user ? (
+              <div className="relative profile-dropdown">
+                <button 
+                  onClick={() => setIsProfileDropdownOpen(!isProfileDropdownOpen)}
+                  className="flex items-center text-white hover:text-gray-200 transition-colors duration-200 space-x-1"
+                >
+                  {user.photoURL ? (
+                    <img 
+                      src={user.photoURL} 
+                      alt="Profile" 
+                      className="h-6 w-6 rounded-full"
+                    />
+                  ) : (
+                    <FiUser className="h-5 w-5" style={{ strokeWidth: 1 }} />
+                  )}
+                  <FiChevronDown className="h-3 w-3 hidden md:block" />
+                </button>
+                
+                {/* Dropdown Menu */}
+                {isProfileDropdownOpen && (
+                  <div className="absolute right-0 mt-2 w-64 bg-white rounded-md shadow-lg py-2 z-50 border">
+                    <div className="px-4 py-3 border-b border-gray-200">
+                      <p className="text-sm text-gray-900 font-medium">Signed in as</p>
+                      <p className="text-sm text-gray-600 truncate">{user.email}</p>
+                    </div>
+                    <button
+                      onClick={handleLogout}
+                      className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors duration-200"
+                    >
+                      <FiLogOut className="h-4 w-4 mr-3" />
+                      Sign out
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link 
+                to="/login" 
+                className="text-white hover:text-gray-200 transition-colors duration-200"
+              >
+                <FiUser className="h-5 w-5" style={{ strokeWidth: 1 }} />
+              </Link>
+            )}
+            
             <button className="text-white hover:text-gray-200 transition-colors duration-200">
               <FiSearch className="h-5 w-5" style={{ strokeWidth: 1 }} />
             </button>
-            <Link to="/checkout" className="text-white hover:text-gray-200 transition-colors duration-200">
+            <Link to="/checkout" className="hidden md:block text-white hover:text-gray-200 transition-colors duration-200">
               <FiShoppingCart className="h-5 w-5" style={{ strokeWidth: 1 }} />
             </Link>
           </div>
@@ -71,10 +142,38 @@ const Header = () => {
             >
               <FiX className="h-6 w-6" />
             </button>
-          </div>
-
-          {/* Menu Items */}
+          </div>          {/* Menu Items */}
           <div className="flex-1 px-6 py-4">
+            {/* User info in mobile menu */}
+            {user && (
+              <div className="mb-6 pb-4 border-b border-gray-200">
+                <div className="flex items-center space-x-3 mb-3">
+                  {user.photoURL ? (
+                    <img 
+                      src={user.photoURL} 
+                      alt="Profile" 
+                      className="h-10 w-10 rounded-full"
+                    />
+                  ) : (
+                    <div className="h-10 w-10 bg-[#B45B29] rounded-full flex items-center justify-center">
+                      <FiUser className="h-5 w-5 text-white" />
+                    </div>
+                  )}
+                  <div>
+                    <p className="text-sm font-medium text-[#B45B29]">Signed in as</p>
+                    <p className="text-xs text-gray-600 truncate">{user.email}</p>
+                  </div>
+                </div>
+                <button
+                  onClick={handleLogout}
+                  className="flex items-center w-full text-left text-[#B45B29] hover:text-[#8B3A1A] text-sm py-2 transition-colors duration-200"
+                >
+                  <FiLogOut className="h-4 w-4 mr-3" />
+                  Sign out
+                </button>
+              </div>
+            )}
+            
             <div className="space-y-1">
               {navigationItems.map((item, index) => (
                 <Link

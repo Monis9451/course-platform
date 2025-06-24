@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
+import { FiEye, FiEyeOff } from 'react-icons/fi'
 import { 
   createUserWithEmailAndPassword, 
   signInWithEmailAndPassword, 
@@ -17,9 +19,15 @@ const Login = () => {
     email: '',
     password: '',
     confirmPassword: ''
-  });
-  const [errors, setErrors] = useState({});
+  });  const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Get the intended destination from location state
+  const from = location.state?.from?.pathname || '/';
 
   // Google Auth Provider
   const googleProvider = new GoogleAuthProvider();
@@ -75,21 +83,17 @@ const Login = () => {
     if (!validateForm()) return;
 
     setLoading(true);
-    setErrors({});
-
-    try {
+    setErrors({});    try {
       if (isLogin) {
         // Sign in existing user
         const userCredential = await signInWithEmailAndPassword(auth, formData.email, formData.password);
         console.log('User signed in:', userCredential.user);
-        // You can redirect user here or update app state
-        alert('Successfully signed in!');
+        navigate(from, { replace: true }); // Redirect to intended page or home
       } else {
         // Create new user
         const userCredential = await createUserWithEmailAndPassword(auth, formData.email, formData.password);
         console.log('User created:', userCredential.user);
-        // You can update user profile with name here if needed
-        alert('Account created successfully!');
+        navigate(from, { replace: true }); // Redirect to intended page or home
       }
     } catch (error) {
       console.error('Authentication error:', error);
@@ -127,13 +131,10 @@ const Login = () => {
   // Handle Google authentication
   const handleGoogleAuth = async () => {
     setLoading(true);
-    setErrors({});
-
-    try {
+    setErrors({});    try {
       const result = await signInWithPopup(auth, googleProvider);
       console.log('Google sign in successful:', result.user);
-      alert('Successfully signed in with Google!');
-      // You can redirect user here or update app state
+      navigate(from, { replace: true }); // Redirect to intended page or home
     } catch (error) {
       console.error('Google auth error:', error);
       let errorMessage = 'Google authentication failed. Please try again.';
@@ -228,20 +229,32 @@ const Login = () => {
               {errors.email && (
                 <p className="mt-1 text-sm text-red-600">{errors.email}</p>
               )}
-            </div>
-              <div>
+            </div>            <div>
               <label htmlFor="password" className="block text-sm font-medium text-black mb-1">
                 Password
               </label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                value={formData.password}
-                onChange={handleInputChange}
-                className={`w-full px-4 py-2 border ${errors.password ? 'border-red-500' : 'border-gray-300'} focus:outline-none focus:ring-2 focus:ring-primary`}
-                placeholder="Enter your password"
-              />
+              <div className="relative">
+                <input
+                  id="password"
+                  name="password"
+                  type={showPassword ? "text" : "password"}
+                  value={formData.password}
+                  onChange={handleInputChange}
+                  className={`w-full px-4 py-2 pr-12 border ${errors.password ? 'border-red-500' : 'border-gray-300'} focus:outline-none focus:ring-2 focus:ring-primary`}
+                  placeholder="Enter your password"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-600"
+                >
+                  {showPassword ? (
+                    <FiEyeOff className="h-5 w-5" />
+                  ) : (
+                    <FiEye className="h-5 w-5" />
+                  )}
+                </button>
+              </div>
               {errors.password && (
                 <p className="mt-1 text-sm text-red-600">{errors.password}</p>
               )}
@@ -251,21 +264,34 @@ const Login = () => {
               <div className="text-right">
                 <a href="#" className="text-sm text-primary hover:underline">
                   Forgot password?
-                </a>
-              </div>            ) : (
+                </a>              </div>            ) : (
               <div>
                 <label htmlFor="confirmPassword" className="block text-sm font-medium text-black mb-1">
                   Confirm Password
                 </label>
-                <input
-                  id="confirmPassword"
-                  name="confirmPassword"
-                  type="password"
-                  value={formData.confirmPassword}
-                  onChange={handleInputChange}
-                  className={`w-full px-4 py-2 border ${errors.confirmPassword ? 'border-red-500' : 'border-gray-300'} focus:outline-none focus:ring-2 focus:ring-primary`}
-                  placeholder="Confirm your password"
-                />                {errors.confirmPassword && (
+                <div className="relative">
+                  <input
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    type={showConfirmPassword ? "text" : "password"}
+                    value={formData.confirmPassword}
+                    onChange={handleInputChange}
+                    className={`w-full px-4 py-2 pr-12 border ${errors.confirmPassword ? 'border-red-500' : 'border-gray-300'} focus:outline-none focus:ring-2 focus:ring-primary`}
+                    placeholder="Confirm your password"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                    className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-600"
+                  >
+                    {showConfirmPassword ? (
+                      <FiEyeOff className="h-5 w-5" />
+                    ) : (
+                      <FiEye className="h-5 w-5" />
+                    )}
+                  </button>
+                </div>
+                {errors.confirmPassword && (
                   <p className="mt-1 text-sm text-red-600">{errors.confirmPassword}</p>
                 )}
               </div>
